@@ -9,6 +9,7 @@ import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   products: Product[] = [];
