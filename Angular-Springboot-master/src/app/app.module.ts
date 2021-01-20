@@ -20,6 +20,7 @@ import { AddressComponent } from './Components/home/address/address.component';
 import { EditItemComponent } from './Components/admin/edit-item/edit-item.component';
 import { OrderItemComponent } from './Components/admin/order-item/order-item.component';
 import { ProductDComponent } from './Components/product-d/product-d.component';
+import { AboutComponent } from './Components/home/about/about.component';
 const appRoutes:Routes=[
   { path: '',
     redirectTo: '/home',
@@ -67,7 +68,12 @@ const appRoutes:Routes=[
   path:'admin/order',
   component: OrderItemComponent,
   canActivate:[AuthguardGuard]
-}
+},
+{
+  path:'home/about',
+  component: AboutComponent,
+  canActivate:[AuthguardGuard]
+},
 ];
 
 @NgModule({
@@ -83,7 +89,8 @@ const appRoutes:Routes=[
     AdminComponent,
     EditItemComponent,
     OrderItemComponent,
-    ProductDComponent
+    ProductDComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
