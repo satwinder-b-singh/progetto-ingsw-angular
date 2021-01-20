@@ -16,7 +16,10 @@ export class EditItemComponent implements OnInit {
     price: 0,
     productname: '',
     quantity: 0,
-    productimage: null
+    productimage: null,
+    categoria: '',
+    size: '',
+    sex: ''
   };
   products: Product[] = [];
   fileToUpload: File = null;

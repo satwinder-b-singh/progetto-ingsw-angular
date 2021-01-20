@@ -5,4 +5,7 @@ export interface Product {
     productname: string;
     quantity: any;
     productimage: File;
+    categoria: string;
+    size: string;
+    sex: string;
 }

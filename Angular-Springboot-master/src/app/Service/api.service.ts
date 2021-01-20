@@ -14,6 +14,8 @@ export class ApiService {
   private LOGU_API = "http://localhost:8087/user/verify";
   private LOGA_API = "http://localhost:8087/admin/verify";
   private VISITOR_PRDLST_API = "http://localhost:8087/visitor/getProductsVisitor";
+  private VISITOR_PRDLST_FILTER_API = "http://localhost:8087/visitor/findByProductName";
+
   private PRDBY_ID = "http://localhost:8087/visitor/getProductsById";
   private PRDLST_API = "http://localhost:8087/user/getProducts";
   private ADD_CART_API = "http://localhost:8087/user/addToCart";
@@ -83,8 +85,13 @@ export class ApiService {
   }
   getProductsFiltri(size: String,category: String, sesso: String) : Observable<any>{
 
+<<<<<<< Updated upstream
     
     return this.http.post<any>(this.VISITOR_PRDLST_API, null);
+=======
+
+    return this.http.post<any>(this.VISITOR_PRDLST_FILTER_API, null);
+>>>>>>> Stashed changes
 
   }
 
