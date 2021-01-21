@@ -14,7 +14,7 @@ export class ApiService {
   private LOGU_API = 'http://localhost:8087/user/verify';
   private LOGA_API = 'http://localhost:8087/admin/verify';
   private VISITOR_PRDLST_FILTER_API = 'http://localhost:8087/visitor/findBySizeAndCategoryAndSex';
-
+  private PROD_BY_CATEGORY = 'http://localhost:8087/visitor/getProductsByCategory';
   private VISITOR_PRDLST_API = 'http://localhost:8087/visitor/getProductsVisitor';
   private PRDBY_ID = 'http://localhost:8087/visitor/getProductsById';
   private PRDLST_API = 'http://localhost:8087/user/getProducts';
@@ -76,7 +76,13 @@ export class ApiService {
     return this.http.post<any>(this.PRDBY_ID, JSON.parse(String(id)));
 
   }
+
+  getProductsByCategroy  (categoria: string): Observable<any> {
+
+  return this.http.post<any>(this.PROD_BY_CATEGORY,  categoria);
+  }
   // Fetching all the products from the database
+
   getProductsVisitor( ): Observable<any> {
 
 

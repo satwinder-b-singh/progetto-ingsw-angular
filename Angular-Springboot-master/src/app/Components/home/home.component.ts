@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   sesso: string= "";
   size: string= "";
   ngOnInit() {
-    
+
       this.api.getProductsVisitor().subscribe(
       res => {
 
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
       res => {
 
         this.products = res.oblist;
-      
+
       }
     );
   }
