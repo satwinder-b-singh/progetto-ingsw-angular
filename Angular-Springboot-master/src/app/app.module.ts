@@ -20,6 +20,7 @@ import { AddressComponent } from './Components/home/address/address.component';
 import { EditItemComponent } from './Components/admin/edit-item/edit-item.component';
 import { OrderItemComponent } from './Components/admin/order-item/order-item.component';
 import { ProductDComponent } from './Components/product-d/product-d.component';
+import { FooterComponent } from './Components/footer/footer.component';
 const appRoutes:Routes=[
   { path: '',
     redirectTo: '/home',
@@ -83,7 +84,8 @@ const appRoutes:Routes=[
     AdminComponent,
     EditItemComponent,
     OrderItemComponent,
-    ProductDComponent
+    ProductDComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
