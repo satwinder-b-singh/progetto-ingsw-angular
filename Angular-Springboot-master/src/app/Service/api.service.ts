@@ -81,6 +81,17 @@ export class ApiService {
     return this.http.post<any>(this.VISITOR_PRDLST_API, null);
 
   }
+  getProductsFiltri(size: string,category: string, sesso: string) : Observable<any>{
+
+    
+    const filtri: FormData = new FormData();
+    filtri.append("size",size);
+    filtri.append("category",category);
+    filtri.append("sesso",sesso);
+    
+    return this.http.post<any>(this.VISITOR_PRDLST_API, filtri);
+
+  }
 
   // Add Products to the user Cart
   addCartItems(product: Product, auth: string): Observable<any> {
