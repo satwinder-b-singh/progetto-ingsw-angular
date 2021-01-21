@@ -11,16 +11,7 @@
 <div class="page-content">
 <div class="row">
   <div class="col-3 align-left" *ngFor="let product of products">
-    <div class="card shadow p-3 mb-5 bg-white rounded">
-      <div class="card-body">
-        <h5 class="card-title">{{product.productname}}</h5>
-        <img src="data:image/png;base64,{{product.productimage}}" class="img-responsive"
-             height="150px" width="200px" alt="Image">
-        <p class="card-text"> {{product.description}}</p>
-        <input type="hidden" value={{product.productid}} #prdid>
-
-      </div>
-    </div>
+    <app-product [product]="product" (productAddToCart)="addToCart($event)"  (showProduct)="showProductPage(product.productid)">Loading...</app-product>
   </div>
 </div>
 
