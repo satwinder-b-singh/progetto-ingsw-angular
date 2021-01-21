@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'filtri',
+  selector: 'app-filtri',
   templateUrl: './filtri.component.html',
   styleUrls: ['./filtri.component.css']
 })
