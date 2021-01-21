@@ -32,4 +32,5 @@ export class NavigationComponent implements OnInit {
     this.route.navigate(['/login']);
   }
 
+  
 }
