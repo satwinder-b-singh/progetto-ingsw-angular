@@ -22,6 +22,11 @@ import { OrderItemComponent } from './Components/admin/order-item/order-item.com
 import { ProductDComponent } from './Components/product-d/product-d.component';
 import { AboutComponent } from './Components/home/about/about.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { MaglieComponent } from './Components/maglie/maglie.component';
+import { CamicieComponent } from './Components/camicie/camicie.component';
+import { PantaloniComponent } from './Components/pantaloni/pantaloni.component';
+import { GiubottiComponent } from './Components/giubotti/giubotti.component';
+import { FiltriComponent } from './Components/filtri/filtri.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -76,6 +81,26 @@ const appRoutes:Routes=[
   component: AboutComponent,
   canActivate:[AuthguardGuard]
 },
+{
+  path:'home/maglie',
+  component: MaglieComponent,
+  canActivate:[AuthguardGuard]
+},
+{
+  path:'home/giubotti',
+  component: GiubottiComponent,
+  canActivate:[AuthguardGuard]
+},
+{
+  path:'home/camicie',
+  component: CamicieComponent,
+  canActivate:[AuthguardGuard]
+},
+{
+  path:'home/pantaloni',
+  component: CamicieComponent,
+  canActivate:[AuthguardGuard]
+}
 
 ];
 
@@ -94,7 +119,12 @@ const appRoutes:Routes=[
     OrderItemComponent,
     ProductDComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    MaglieComponent,
+    CamicieComponent,
+    PantaloniComponent,
+    GiubottiComponent,
+    FiltriComponent
   ],
   imports: [
     BrowserModule,
