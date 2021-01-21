@@ -13,9 +13,13 @@ export class ApiService {
   private REG_API = "http://localhost:8087/user/signup";
   private LOGU_API = "http://localhost:8087/user/verify";
   private LOGA_API = "http://localhost:8087/admin/verify";
+<<<<<<< Updated upstream
   private VISITOR_PRDLST_API = "http://localhost:8087/visitor/getProductsVisitor";
   private VISITOR_PRDLST_FILTER_API = "http://localhost:8087/visitor/findByProductName";
 
+=======
+  private VISITOR_PRDLST_API = "http://localhost:8087/visitor/findBySizeAndCategoryAndSex";
+>>>>>>> Stashed changes
   private PRDBY_ID = "http://localhost:8087/visitor/getProductsById";
   private PRDLST_API = "http://localhost:8087/user/getProducts";
   private ADD_CART_API = "http://localhost:8087/user/addToCart";
@@ -83,6 +87,7 @@ export class ApiService {
     return this.http.post<any>(this.VISITOR_PRDLST_API, null);
 
   }
+<<<<<<< Updated upstream
   getProductsFiltri(size: String,category: String, sesso: String) : Observable<any>{
 
 <<<<<<< Updated upstream
@@ -91,6 +96,18 @@ export class ApiService {
 =======
 
     return this.http.post<any>(this.VISITOR_PRDLST_FILTER_API, null);
+>>>>>>> Stashed changes
+=======
+  getProductsFiltri(size: string,categoria: string, sesso: string) : Observable<any>{
+
+
+    const filtri: FormData = new FormData();
+    console.log("categoria"+categoria)
+    filtri.append("size",size);
+    filtri.append("categoria",categoria);
+    filtri.append("sex",sesso);
+
+    return this.http.post<any>(this.VISITOR_PRDLST_API, filtri);
 >>>>>>> Stashed changes
 
   }

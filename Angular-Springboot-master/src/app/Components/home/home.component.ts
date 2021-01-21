@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   private auth_token: string;
 <<<<<<< Updated upstream
   constructor(private api: ApiService, private router: Router,private _route : ActivatedRoute) { }
-  category: string="";
+  categoria: string="";
   sesso: string= "";
   size: string= "";
 =======
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   size = '';
 >>>>>>> Stashed changes
   ngOnInit() {
-    
+
       this.api.getProductsVisitor().subscribe(
       res => {
 
@@ -56,11 +56,12 @@ export class HomeComponent implements OnInit {
     }
 <<<<<<< Updated upstream
   myClick(){
-    console.log(this.size + this.sesso + this.category)
-    this.api.getProductsFiltri(this.size,this.category,this.sesso).subscribe(
+    console.log(this.size + this.sesso + this.categoria)
+    this.api.getProductsFiltri(this.size,this.categoria,this.sesso).subscribe(
       res => {
 
         this.products = res.oblist;
+<<<<<<< Updated upstream
       
 =======
   myClick() {
@@ -70,6 +71,9 @@ export class HomeComponent implements OnInit {
 
         this.products = res.oblist;
         console.log('Prodotti' + this.products[0].productid);
+>>>>>>> Stashed changes
+=======
+
 >>>>>>> Stashed changes
       }
     );
