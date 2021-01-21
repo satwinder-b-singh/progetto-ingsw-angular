@@ -39,12 +39,17 @@
         
 
              <div class="products mb-3">
-                  <div class="row justify-content-center">
+                  <div class="row justify-content-center"  >
                       <div class="col-6">
-                           <div class="product product-7 text-center" *ngFor="let product of products">
-                              <app-product [product]="product" (productAddToCart)="addToCart($event)"  (showProduct)="showProductPage(product.productid)">Loading...</app-product>
-                            </div><!-- End .product -->
-                        </div><!-- End .col-sm-6 -->
+                           <tr class="product product-7 text-center" *ngFor="let product of products">
+                             
+                           <td>
+                           <app-product [product]="product" (productAddToCart)="addToCart($event)"  (showProduct)="showProductPage(product.productid)">Loading...</app-product>
+                           </td>                           
+                              
+                            </tr><!-- End .product -->
+
+                          </div><!-- End .col-sm-6 -->
 
                       
                   </div><!-- End .row -->
