@@ -20,11 +20,9 @@ import { AddressComponent } from './Components/home/address/address.component';
 import { EditItemComponent } from './Components/admin/edit-item/edit-item.component';
 import { OrderItemComponent } from './Components/admin/order-item/order-item.component';
 import { ProductDComponent } from './Components/product-d/product-d.component';
-<<<<<<< HEAD
 import { AboutComponent } from './Components/home/about/about.component';
-=======
 import { FooterComponent } from './Components/footer/footer.component';
->>>>>>> feture-simone
+
 const appRoutes:Routes=[
   { path: '',
     redirectTo: '/home',
@@ -78,6 +76,7 @@ const appRoutes:Routes=[
   component: AboutComponent,
   canActivate:[AuthguardGuard]
 },
+
 ];
 
 @NgModule({
@@ -94,11 +93,8 @@ const appRoutes:Routes=[
     EditItemComponent,
     OrderItemComponent,
     ProductDComponent,
-<<<<<<< HEAD
-    AboutComponent
-=======
+    AboutComponent,
     FooterComponent
->>>>>>> feture-simone
   ],
   imports: [
     BrowserModule,
