@@ -14,12 +14,14 @@ export class HomeComponent implements OnInit {
 
   products: Product[] = [];
   private auth_token: string;
+
   constructor(private api: ApiService, private router: Router,private _route : ActivatedRoute) { }
   category: string="";
   sesso: string= "";
   size: string= "";
   ngOnInit() {
-
+    if (this.api.isAuthenticated)
+      this.auth_token = this.api.getToken();
       this.api.getProductsVisitor().subscribe(
       res => {
 
@@ -30,9 +32,9 @@ export class HomeComponent implements OnInit {
 
   }
 
-  addToCart(e) {
-    this.api.addCartItems(e, this.auth_token).subscribe(res => {
-		console.log(e);
+  addToCart(product: Product) {
+    this.api.addCartItems(product, this.auth_token).subscribe(res => {
+		console.log(product);
       console.log(res);
     })
   }

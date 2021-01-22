@@ -106,10 +106,12 @@ export class ApiService {
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
 	myheader.set('Origin', 'http://localhost4200');
 	myheader.set('Access-Control-Allow-Origin', '*');
-	myheader.set('Access-Control-Request-Method', 'GET,POST,PUT,DELETE,OPTIONS');
-	myheader.set('Access-Control-Request-Headers', 'Origin,Content-Type, Authorization');
+    myheader.set('Access-Control-Request-Method', 'GET,POST,PUT,DELETE,OPTIONS')
+     myheader.set('Access-Control-Request-Headers', 'Origin,Content-Type, Authorization');
 	console.log(myheader);
-    return this.http.post<any>(this.ADD_CART_API, product, { headers: myheader });
+console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.productid);
+
+    return this.http.post<any>(this.ADD_CART_API, product.productid,{ headers: myheader });//
   }
 
   // View Cart Items for the logged User
