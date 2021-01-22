@@ -47,7 +47,9 @@ export class EditItemComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       console.log("siamo qi");
       console.log(params["user"]);
+      console.log(this.prodid);
       this.prodid = params["user"];
+      console.log(this.prodid);
     });
   }
 
@@ -60,10 +62,10 @@ export class EditItemComponent implements OnInit {
     reader.readAsDataURL(this.fileToUpload);
   }
 
-  updateProd(desc, quan, price, prodname, image) {
+  updateProd(desc, quan, price, prodname, image,cat,size,sex) {
 
     console.log( this.product.productid);
-    this.api.updateProduct(this.auth, desc.value, quan.value, price.value, prodname.value, this.fileToUpload, this.product.productid).subscribe(res => {
+    this.api.updateProduct(this.auth, desc.value, quan.value, price.value, prodname.value, this.fileToUpload, this.prodid , cat.value,size.value,sex.value).subscribe(res => {
       console.log(res);
     });
   }

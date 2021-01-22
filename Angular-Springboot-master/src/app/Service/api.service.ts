@@ -201,7 +201,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // update Product for Logged Admin User
   updateProduct(auth: string, desc: string,
-    quan: string, price: string, prodname: string, image: File, productid: any): Observable<any> {
+    quan: string, price: string, prodname: string, image: File, productid: any, categroia: string, size: string, sex: string): Observable<any> {
 
     const formData: FormData = new FormData();
     formData.append('description', desc);
@@ -210,6 +210,9 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
     formData.append('quantity', quan);
     formData.append('file', image);
     formData.append('productId', productid);
+    formData.append('categoria', categroia);
+    formData.append('size', size);
+    formData.append('sex', sex);
 
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
     return this.http.post<any>(this.UPD_PRD_API, formData, { headers: myheader });
