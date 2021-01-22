@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   category: string="";
   sesso: string= "";
   size: string= "";
+
   ngOnInit() {
     if (this.api.isAuthenticated)
       this.auth_token = this.api.getToken();
