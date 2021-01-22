@@ -11,7 +11,17 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProductDComponent implements OnInit {
   constructor(private api: ApiService,private _route : ActivatedRoute) { }
-  product: Product;
+  product: Product = {
+    productid: 0,
+    description: '',
+    productname: '',
+    price: 0,
+    quantity: 0,
+    category: "",
+    size: "",
+    sex: "",
+    productimage: null
+  };
   id:number;
   ngOnInit() {
 
@@ -21,9 +31,10 @@ export class ProductDComponent implements OnInit {
     this.api.getProductsById(this.id).subscribe(
       data=>{
     this.product=data.product;
+    console.log(this.product);
    },
       error=> console.log("Eccezione")
     )
-
+   
   }
 }

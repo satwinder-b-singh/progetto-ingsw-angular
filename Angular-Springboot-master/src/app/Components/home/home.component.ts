@@ -9,6 +9,7 @@ import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   products: Product[] = [];
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   sesso: string= "";
   size: string= "";
   ngOnInit() {
-    
+
       this.api.getProductsVisitor().subscribe(
       res => {
 
@@ -53,7 +54,7 @@ export class HomeComponent implements OnInit {
       res => {
 
         this.products = res.oblist;
-      
+
       }
     );
   }
