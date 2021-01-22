@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   category: string="";
   sesso: string= "";
   size: string= "";
+
   ngOnInit() {
 
       this.api.getProductsVisitor().subscribe(

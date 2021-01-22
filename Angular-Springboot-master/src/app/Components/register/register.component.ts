@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
   private registerForm: any;
   constructor(private apiService: ApiService,
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
+
   createForm() {
     this.registerForm = this.formBuilder.group({
       email: '',
