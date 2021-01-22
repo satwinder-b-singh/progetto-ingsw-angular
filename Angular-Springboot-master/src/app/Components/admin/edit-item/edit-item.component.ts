@@ -13,9 +13,12 @@ export class EditItemComponent implements OnInit {
   product: Product = {
     productid: 0,
     description: '',
-    price: 0,
     productname: '',
+    price: 0,
     quantity: 0,
+    category: "",
+    size: "",
+    sex: "",
     productimage: null
   };
   products: Product[] = [];
