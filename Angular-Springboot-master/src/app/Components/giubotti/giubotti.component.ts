@@ -15,7 +15,7 @@ export class GiubottiComponent implements OnInit {
 
 
   ngOnInit() {
-    this.api.getProductsByCategroy(this.categoria ).subscribe(
+    this.api.getProductsVisitor( ).subscribe(
       res => {
         this.products = res.oblist;
       }
