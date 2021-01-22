@@ -1,6 +1,6 @@
 <div class="card">
-        <div (click)="show(product.id)" class="card-body">
-                <h5 class="card-title" >{{product.productname}}</h5>
+        <div  class="card-body">
+                <h5 (click)="show(product.id)" class="card-title" >{{product.productname}}</h5>
                 <img src="data:image/png;base64,{{product.productimage}}" class="img-responsive" height="150px"
                         width="200px" alt="Image">
                 <p class="card-text "> {{product.description}}</p>
