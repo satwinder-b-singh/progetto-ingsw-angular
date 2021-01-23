@@ -30,7 +30,7 @@ export class ApiService {
   private UPD_PRD_API = 'http://localhost:8087/admin/updateProducts';
   private ORD_API = 'http://localhost:8087/admin/viewOrders';
   private UPD_ORD_API = 'http://localhost:8087/admin/updateOrder';
-
+  private CHECKO_API='http://localhost:8087/user/checkout';
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
 
   }
@@ -38,6 +38,14 @@ export class ApiService {
   register(user: User): Observable<any> {
     return this.http.post(this.REG_API,
       JSON.stringify(user),
+      {
+        headers:
+          { 'Content-Type': 'application/json' }
+      });
+  }
+  checkout(address: Address): Observable<any>{
+    return this.http.post(this.REG_API,
+      JSON.stringify(address),
       {
         headers:
           { 'Content-Type': 'application/json' }

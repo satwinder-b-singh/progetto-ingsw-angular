@@ -27,6 +27,8 @@ import { CamicieComponent } from './Components/camicie/camicie.component';
 import { PantaloniComponent } from './Components/pantaloni/pantaloni.component';
 import { GiubottiComponent } from './Components/giubotti/giubotti.component';
 import { FiltriComponent } from './Components/filtri/filtri.component';
+import { CheckoutComponent } from './Components/home/checkout/checkout.component';
+import { SummaryComponent } from './Components/home/checkout/summary/summary.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -65,6 +67,14 @@ const appRoutes:Routes=[
   path:'home/address',
   component: AddressComponent,
   canActivate:[AuthguardGuard]
+},
+{
+  path: 'home/cart/checkout',
+  component: CheckoutComponent,
+},
+{
+  path: 'home/cart/checkout/summary',
+  component: SummaryComponent,
 },
 {
   path:'admin/edit',
@@ -124,7 +134,9 @@ const appRoutes:Routes=[
     CamicieComponent,
     PantaloniComponent,
     GiubottiComponent,
-    FiltriComponent
+    FiltriComponent,
+    CheckoutComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
