@@ -44,7 +44,7 @@ export class ApiService {
       });
   }
   checkout(address: Address): Observable<any>{
-    return this.http.post(this.REG_API,
+    return this.http.post(this.CHECKO_API,
       JSON.stringify(address),
       {
         headers:
