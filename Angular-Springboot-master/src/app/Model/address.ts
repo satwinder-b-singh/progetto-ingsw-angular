@@ -1,8 +1,11 @@
 export interface Address {
-	address: string;
-	city: string;
-	state: string;
-	country: string;
-	zipcode: string;
-	phonenumber: string;
+	nome: string,
+	cognome: string,
+	nazione: string,
+	indirizzo: string,
+	città: string,
+	regione: string,
+	CAP: string,
+	email:string,
+	phone:string,
 }
