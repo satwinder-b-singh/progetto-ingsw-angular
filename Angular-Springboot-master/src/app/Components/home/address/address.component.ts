@@ -12,12 +12,15 @@ export class AddressComponent implements OnInit {
 
   private addressForm: any;
   model: Address = {
-    address: '',
-    city: '',
-    state: '',
-    country: '',
-    zipcode: '',
-    phonenumber: ''
+    nome: string = "",
+    cognome: string,
+    nazione: string,
+    indirizzo: string,
+    città: string,
+    regione: string,
+    CAP: string,
+    email:string,
+    phone:string,
 
   };
   auth: string;

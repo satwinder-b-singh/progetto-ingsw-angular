@@ -21,8 +21,10 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
     this.auth = this.api.getToken();
     this.api.getCartItems(this.auth).subscribe(res => {
+
       this.cartlist = res.oblist;
-	  this.totalSum=0;
+      console.log(this.cartlist );
+	  this.totalSum = 0;
       this.cartlist.forEach(value => {
         this.totalSum = this.totalSum + (value.quantity * value.price);console.log(this.totalSum);
       });

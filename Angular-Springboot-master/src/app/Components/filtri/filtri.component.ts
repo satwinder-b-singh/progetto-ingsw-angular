@@ -14,13 +14,13 @@ export class FiltriComponent implements OnInit {
 
   azzera(){
     var ele = document.getElementsByName("category");
-   for(var i=0;i<ele.length;i++)
+    for(var i=0;i<ele.length;i++)
       ele[i].checked = false;
     ele = document.getElementsByName("size");
     for(var i=0;i<ele.length;i++)
-         ele[i].checked = false;
+      ele[i].checked = false;
     ele = document.getElementsByName("sesso");
     for(var i=0;i<ele.length;i++)
-        ele[i].checked = false;
+      ele[i].checked = false;
   }
 }

@@ -31,6 +31,8 @@ export class ApiService {
   private ORD_API = 'http://localhost:8087/admin/viewOrders';
   private UPD_ORD_API = 'http://localhost:8087/admin/updateOrder';
   private CHECKO_API='http://localhost:8087/user/checkout';
+
+
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
 
   }
@@ -43,13 +45,9 @@ export class ApiService {
           { 'Content-Type': 'application/json' }
       });
   }
-  checkout(address: Address): Observable<any>{
-    return this.http.post(this.REG_API,
-      JSON.stringify(address),
-      {
-        headers:
-          { 'Content-Type': 'application/json' }
-      });
+  checkout( auth: string): Observable<any>{//address: Address,
+    const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    return this.http.post<any>(this.CHECKO_API, { headers: myheader });//JSON.stringify(address)
   }
   // validating user credentials
   userLogin(user: User): Observable<any> {
@@ -209,6 +207,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // update Product for Logged Admin User
   updateProduct(auth: string, desc: string,
+                // tslint:disable-next-line:max-line-length
     quan: string, price: string, prodname: string, image: File, productid: any, categroia: string, size: string, sex: string): Observable<any> {
 
     const formData: FormData = new FormData();

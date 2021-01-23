@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.apiService.userLogin(this.loginForm.value).
       subscribe(res => {
-        if (res.status == "200") {
+        // tslint:disable-next-line:triple-equals
+        if (res.status == '200') {
           this.apiService.storeToken(res.auth_TOKEN, "customer");
           this.router.navigate(['/home']);
           this.error = false;

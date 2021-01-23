@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     if (this.api.isAuthenticated)
       this.auth_token = this.api.getToken();
-      this.api.getProductsVisitor().subscribe(
+
+    this.api.getProductsVisitor().subscribe(
       res => {
 
         this.products = res.oblist;
@@ -51,7 +52,7 @@ export class HomeComponent implements OnInit {
       }
     };
 
-    this.router.navigate(['/visitor/detailProduct'],navigationExtras  );
+    this.router.navigate(['/visitor/detailProduct'], navigationExtras  );
 
     }
   myClick(){
