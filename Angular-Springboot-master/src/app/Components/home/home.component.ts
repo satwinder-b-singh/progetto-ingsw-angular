@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
 import { Product } from 'src/app/Model/product';
 import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
+import {User} from "../../Model/user";
 
 
 @Component({
@@ -21,9 +22,11 @@ export class HomeComponent implements OnInit {
   size: string= "";
 
   ngOnInit() {
-    if (this.api.isAuthenticated)
+    //this.api.getUserbyId(this.auth_token)
+    if (this.api.isAuthenticated){
       this.auth_token = this.api.getToken();
 
+    }
     this.api.getProductsVisitor().subscribe(
       res => {
 
@@ -34,7 +37,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  
+
   showProductPage(product) {
 
     let navigationExtras: NavigationExtras = {
