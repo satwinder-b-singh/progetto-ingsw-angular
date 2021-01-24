@@ -15,7 +15,7 @@ export class FiltriComponent implements OnInit {
 
   azzera() {
      this.ele = document.getElementsByName('category');
-    for (let i = 0; i < this.ele.length; i++) {
+    for (let i = 0; i < this.ele .length; i++) {
       this.ele[i].checked = false;
     }
     this.ele = document.getElementsByName('size');
