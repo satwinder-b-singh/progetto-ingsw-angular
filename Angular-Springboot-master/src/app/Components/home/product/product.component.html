@@ -1,7 +1,7 @@
 <div class="card">
         <div  class="card-body">
                 <h5 (click)="show(product.id)" class="card-title" >{{product.productname}}</h5>
-                <img src="data:image/png;base64,{{product.productimage}}" class="img-responsive" height="150px"
+                <img (click)="show(product.id)" src="data:image/png;base64,{{product.productimage}}" class="img-responsive" height="150px"
                         width="200px" alt="Image">
                 <p class="card-text "> {{product.description}}</p>
                 
