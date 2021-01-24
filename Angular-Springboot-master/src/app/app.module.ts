@@ -111,6 +111,11 @@ const appRoutes:Routes=[
   path:'home/pantaloni',
   component: CamicieComponent,
   canActivate:[AuthguardGuard]
+},
+{
+  path:'home/user-detail',
+  component: UserDetailComponent,
+  canActivate:[AuthguardGuard]
 }
 
 ];
