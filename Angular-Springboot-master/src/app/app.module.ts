@@ -29,6 +29,7 @@ import { GiubottiComponent } from './Components/giubotti/giubotti.component';
 import { FiltriComponent } from './Components/filtri/filtri.component';
 import { CheckoutComponent } from './Components/home/checkout/checkout.component';
 import { SummaryComponent } from './Components/home/checkout/summary/summary.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -136,7 +137,8 @@ const appRoutes:Routes=[
     GiubottiComponent,
     FiltriComponent,
     CheckoutComponent,
-    SummaryComponent
+    SummaryComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
