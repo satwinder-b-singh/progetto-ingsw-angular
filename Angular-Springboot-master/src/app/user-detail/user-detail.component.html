@@ -1,43 +1,111 @@
-<!-- User details -->
+<head>
+  <!-- QUESTO E' LO STILE CON CSS, DEVO VEDERE COME FARE PER PASSARLO NEL FILE CSS-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-<div class="user-details container mt-4">
+<body>
+<!--          <form     [formGroup]="checkoutForm" (ngSubmit)="checkout()">   -->
+  <div class="row">
+    <div class="col-lg-9">
+      <h2 class="checkout-title">Dettagli Utente</h2><!-- End .checkout-title -->
+      <!-- <div class="row">  -->
+        <div class="col-sm-6">
+          <label >Email *</label>
+          <input type="text" formControlName="nome" class="form-control" placeholder="Mario" required>
+        </div><!-- End .col-sm-6 -->
+
+        <div class="col-sm-6">
+          <label>Username*</label>
+          <input formControlName="cognome" type="text" class="form-control" placeholder="Rossi" required>
+        </div><!-- End .col-sm-6 -->
+        <!--  </div> End .row -->
+
+      <div class="col-sm-6">
+        <label>Username*</label>
+        <input formControlName="cognome" type="text" class="form-control" placeholder="Rossi" required>
+      </div><!-- End .col-sm-6 -->
+
+      <label>Stato*</label>
+      <input type="text" formControlName="nazione" class="form-control" required placeholder="Italia">
+
+      <label>Indirizzo *</label>
+      <input type="text" class="form-control" formControlName="indirizzo" placeholder="Via .... N ..." required>
+      <input type="text" class="form-control" >
+
+      <div class="row">
+        <div class="col-sm-6">
+          <label>Città *</label>
+          <input type="text" formControlName="città" class="form-control" placeholder="Roma" required>
+        </div><!-- End .col-sm-6 -->
+
+        <div class="col-sm-6">
+          <label>Regione*</label>
+          <input type="text" formControlName="regione" class="form-control" placeholder="Lazio" required>
+        </div><!-- End .col-sm-6 -->
+      </div><!-- End .row -->
+
+      <div class="row">
+        <div class="col-sm-6">
+          <label>CAP *</label>
+          <input type="text" formControlName="CAP" class="form-control" placeholder="87039" required>
+        </div><!-- End .col-sm-6 -->
+
+        <div class="col-sm-6">
+          <label>Numero Telefono *</label>
+          <input type="tel" formControlName="phone" class="form-control" placeholder="333857294" required>
+        </div><!-- End .col-sm-6 -->
+      </div><!-- End .row -->
+
+      <label>Email *</label>
+      <input type="email"  formControlName="email"class="form-control" placeholder="carezze@gmail.com" required>
+      <label>Commenti aggiuntivi</label>
+      <textarea class="form-control" cols="30" rows="4" placeholder="Note riguardanti le spedizioni"></textarea>
+    </div><!-- End .col-lg-9 -->
+    <aside class="col-lg-3">
+      <div class="summary">
+        <h3 class="summary-title">Il tuo ordine</h3><!-- End .summary-title -->
+
+        <table class="table table-summary">
+          <thead>
+          <tr>
+            <th>Prodotto</th>
+            <th>Totale</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let cart of cartlist">
+            <td><a href="#">{{cart.productname}}</a></td>
+            <td>{{cart.price | currency:'EUR'}}</td>
+          </tr>
+          <tr class="summary-subtotal">
+            <td>Subtotal:</td>
+            <td>{{totalSum | currency:'EUR'}}</td>
+          </tr><!-- End .summary-subtotal -->
+          <tr>
+            <td>Spedizione:</td>
+            <td>Spedizione Gratuita</td>
+          </tr>
+          <tr class="summary-total">
+            <td>Totale:</td>
+            <td>{{totalSum | currency:'EUR'}}</td>
+          </tr><!-- End .summary-total -->
+          </tbody>
+        </table><!-- End .table table-summary -->
+
+        <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+          <span class="btn-text">Conferma Ordine</span>
+          <span class="btn-hover-text">Procedi al Checkout</span>
+        </button>
+      </div><!-- End .summary -->
+    </aside><!-- End .col-lg-3 -->
+  </div><!-- End .row -->
 
 
-<div class="header-middle sticky-header">
-    <!-- QUI VISUALIZZERO' LE RIGHE DEI DETTAGLI DELL'UTENTE -->
+<!--      </form>     -->
 
- <div class="header-left">
-    <div class="user-details container mt-4">
-      <!-- div v-for="(user, id) in users" :key="id"> <-->
+</body>
 
 
-        <div class="user-title"><strong>User ID: </strong></div> <!-->{{ user.email}}<-->
-        <p class=""><strong>Email:</strong> </p> <!-->{{ user.username }}<-->
-        <p class=""><strong>Password:</strong>  </p> <!-->{{ user.password }}<-->
-        <p class=""><strong>Tipo Utente:</strong> </p> <!--> {{ user.usertype }}<-->
-        <p class=""><strong>Età:</strong> </p> <!-->{{ user.age }}<-->
-      </div>
-</div>
-
-
-
-    <!-- QUI VISUALIZZERO' LE RIGHE DELL'L'INDIRIZZO INSERITO DALL'UTENTE -->
-    <div class="header-right">
-    <div class="user-details container mt-4">
-      <!--div v-for="(user, id) in users" :key="id"-->
-
-
-        <p class=""><strong>Nome:</strong>  </p> <!-->{{ address.nome }}<-->
-        <p class=""><strong>Cognome:</strong>  </p> <!-->{{ address.cognome }}<-->
-        <p class=""><strong>Nazione:</strong>  </p> <!-->{{ address.nazione }}<-->
-        <p class=""><strong>Indirizzo:</strong> </p><!-->{{ address.indirizzo }}<-->
-         <p class=""><strong>Citta:</strong>  </p> <!-->{{ address.citta }}<-->
-        <p class=""><strong>Regione:</strong> </p><!-->{{ address.regione }}<-->
-        <p class=""><strong>CAP:</strong>  </p><!-->{{ address.CAP }}<-->
-        <p class=""><strong>Email:</strong> </p><!-->{{ address.email }}<-->
-        <p class=""><strong>Phone:</strong> </p><!-->{{ address.phone }}<-->
-    </div>
-    </div>
-</div>
-
-</div>
