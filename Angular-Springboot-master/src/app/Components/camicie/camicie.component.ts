@@ -16,7 +16,7 @@ export class CamicieComponent implements OnInit {
 
 
   ngOnInit() {
-    this.api.getProductsByCategroy(this.categoria ).subscribe(
+    this.api.getProductsByCategroy(this.categoria).subscribe(
       res => {
         this.products = res.oblist;
       }

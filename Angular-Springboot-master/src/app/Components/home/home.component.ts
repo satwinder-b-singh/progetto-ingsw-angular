@@ -19,10 +19,12 @@ export class HomeComponent implements OnInit {
   category: string="";
   sesso: string= "";
   size: string= "";
+
   ngOnInit() {
     if (this.api.isAuthenticated)
       this.auth_token = this.api.getToken();
-      this.api.getProductsVisitor().subscribe(
+
+    this.api.getProductsVisitor().subscribe(
       res => {
 
         this.products = res.oblist;
@@ -33,10 +35,13 @@ export class HomeComponent implements OnInit {
   }
 
   addToCart(product: Product) {
+    if (this.auth_token!=null && this.api.isAuthenticated)
     this.api.addCartItems(product, this.auth_token).subscribe(res => {
 		console.log(product);
       console.log(res);
-    })
+    });
+    else
+      this.router.navigate(["/login"]);
   }
   showProductPage(product) {
 
@@ -47,7 +52,7 @@ export class HomeComponent implements OnInit {
       }
     };
 
-    this.router.navigate(['/visitor/detailProduct'],navigationExtras  );
+    this.router.navigate(['/visitor/detailProduct'], navigationExtras  );
 
     }
   myClick(){

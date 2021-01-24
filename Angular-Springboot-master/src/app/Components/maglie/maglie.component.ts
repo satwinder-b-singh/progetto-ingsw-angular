@@ -10,7 +10,7 @@ import {ApiService} from "../../Service/api.service";
 export class MaglieComponent implements OnInit {
 
   products: Product[] = [];
-  categoria: string = "Maglie";
+  categoria: string = "Maglia";
 
   constructor(private api: ApiService) { }
 

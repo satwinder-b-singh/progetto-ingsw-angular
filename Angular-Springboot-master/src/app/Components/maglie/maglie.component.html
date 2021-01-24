@@ -1,3 +1,29 @@
-<p>
-  <app-filtri>               </app-filtri>
-</p>
+
+  <main id="imContent">
+   
+
+    <div id="imCell_1" class=""  data-responsive-sequence-number="1"> 
+      
+      <div id="imTextObject_4_01">
+          <div data-index="0"  class="text-tab-content grid-prop current-tab "  id="imTextObject_4_01_tab0" style="opacity: 1; ">
+            <app-filtri> </app-filtri>
+         </div>
+    
+      </div>
+    </div>
+    <div id="imCell_2" class=""  data-responsive-sequence-number="2">
+        
+      <div id="imTextObject_4_02">
+        <div data-index="0"  class="text-tab-content grid-prop current-tab "  id="imTextObject_4_02_tab0" style="opacity: 1; ">
+          <div class="row">
+            <div class="card-body" *ngFor="let product of products">
+              <app-product [product]="product" >Loading...</app-product>
+           </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </main>
+
+

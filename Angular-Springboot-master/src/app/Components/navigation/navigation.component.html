@@ -62,25 +62,26 @@
 <!------------------------------------------------------------------------------>
 
 
-<body>
-  <div class="page-wrapper">
-    <header class="header">
+
+  <div class="page-wrapper" [ngSwitch]="loggedType" >
+
+    <header class="header" *ngSwitchCase="'home'">
     <div class="header-middle sticky-header">
       <div class="container">
           <div class="header-left">
-              
+
               <a  class="logo">
                   <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
               </a>
 
-            <!--  
+            <!--
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
                             <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
                   </ul>
                 </nav>    -->
 
-          
+
 
               <nav class="main-nav">
                 <ul class="menu sf-arrows">
@@ -90,37 +91,37 @@
 
               <nav class="main-nav">
                 <ul class="menu sf-arrows">
-                    
+
                         <a  routerLink="/home/camicie" >Camicie</a>
                </ul>
             </nav>
 
             <nav class="main-nav">
               <ul class="menu sf-arrows">
-                  
+
                       <a  routerLink="/home/maglie" >Maglie</a>
              </ul>
           </nav>
 
           <nav class="main-nav">
             <ul class="menu sf-arrows">
-                
+
                     <a  routerLink="/home/giubotti">Giubotti</a>
            </ul>
         </nav>
 
         <nav class="main-nav">
           <ul class="menu sf-arrows">
-              
+
                   <a  routerLink="/home/pantaloni" >Pantaloni</a>
          </ul>
       </nav>
 
       </div>
-      
+
       <div class="container">
           <div class="header-right">
-       
+
 
               <nav class="main-nav">
                 <ul class="menu sf-arrows">
@@ -134,12 +135,12 @@
               </ul>
             </nav>
 
-      
+
 
 
               <nav class="main-nav">
                 <ul class="menu sf-arrows">
-                    
+
                         <a routerLink="/home/cart" >Carrello</a>
               </ul>
             </nav>
@@ -150,8 +151,174 @@
 
             </div>
         </div>
-    
+
     </header>
-    </div>
-  </body>
-  
+
+    <header class="header" *ngSwitchCase="'customer'">
+      <div class="header-middle sticky-header">
+        <div class="container">
+          <div class="header-left">
+
+            <a  class="logo">
+              <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
+            </a>
+
+            <!--
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                            <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
+                  </ul>
+                </nav>    -->
+
+
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+                <a  routerLink="/home/about"  >AboutUs</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/camicie" >Camicie</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/maglie" >Maglie</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/giubotti">Giubotti</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/pantaloni" >Pantaloni</a>
+              </ul>
+            </nav>
+
+          </div>
+
+          <div class="container">
+            <div class="header-right">
+
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a (click)="logout()" > Logout</a>
+                </ul>
+              </nav>
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a routerLink="/home/cart" >Carrello</a>
+                </ul>
+              </nav>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <header class="header" *ngSwitchCase="'admin'">
+      <div class="header-middle sticky-header">
+        <div class="container">
+          <div class="header-left">
+
+            <a  class="logo">
+              <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
+            </a>
+
+            <!--
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                            <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
+                  </ul>
+                </nav>    -->
+
+
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+                <a  routerLink="/home/about"  >AboutUs</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/camicie" >Camicie</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/maglie" >Maglie</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/giubotti">Giubotti</a>
+              </ul>
+            </nav>
+
+            <nav class="main-nav">
+              <ul class="menu sf-arrows">
+
+                <a  routerLink="/home/pantaloni" >Pantaloni</a>
+              </ul>
+            </nav>
+
+          </div>
+
+          <div class="container">
+            <div class="header-right">
+
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a routerLink="/login"  >Aggiungi Prodotto</a>
+                </ul>
+              </nav>
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a routerLink="admin/edit"  >Modifica Prodotto</a>
+                </ul>
+              </nav>
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a (click)="logout()" >Log Out</a>
+                </ul>
+              </nav>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+
+
+  </div>
+
