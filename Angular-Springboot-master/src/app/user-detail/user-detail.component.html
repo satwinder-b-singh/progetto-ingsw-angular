@@ -1,3 +1,35 @@
-<p>
-  user-detail works!
-</p>
+<!-- User details -->
+
+<div class="user-details container mt-4">
+
+    <!-- QUI VISUALIZZERO' LE RIGHE DEI DETTAGLI DELL'UTENTE -->
+    <div class="user-details container mt-4">
+      <div v-for="(user, id) in users" :key="id">
+
+
+        <div class="user-title"><strong>User Title: </strong>{{ user.jobTitle}}</div>
+        <p class=""><strong>Street:</strong>  {{ user.fullName }}</p>
+        <p class=""><strong>Zip Code:</strong>  {{ user.email }}</p>
+        <p class=""><strong>City:</strong>  {{ user.phoneNumber }}</p>
+        <p class=""><strong>State:</strong> {{ user.address }}</p>
+        <router-link :to="{ name: 'UserProfile', params: { id: user.id }}">User</router-link>
+      </div>
+
+    </div>
+
+    <!-- QUI VISUALIZZERO' LE RIGHE DELL'L'INDIRIZZO INSERITO DALL'UTENTE -->
+    <div class="user-details container mt-4">
+      <div v-for="(user, id) in users" :key="id">
+
+
+        <div class="user-title"><strong>User Title: </strong>{{ user.jobTitle }}</div>
+        <p class=""><strong>Street:</strong>  {{ user.fullName }}</p>
+        <p class=""><strong>Zip Code:</strong>  {{ user.email }}</p>
+        <p class=""><strong>City:</strong>  {{ user.phoneNumber }}</p>
+        <p class=""><strong>State:</strong> {{ user.address }}</p>
+        <router-link :to="{ name: 'UserProfile', params: { id: user.id }}">User</router-link>
+      </div>
+
+    </div>
+
+</div>
