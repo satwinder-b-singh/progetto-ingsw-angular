@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Address } from 'src/app/Model/address';
 import { ApiService } from 'src/app/Service/api.service';
 import { Router } from '@angular/router';
@@ -26,6 +26,8 @@ export class AddressComponent implements OnInit {
   auth: string;
   constructor(private api: ApiService, private route: Router) { }
 
+
+
   ngOnInit() {
     this.auth = this.api.getToken();
     this.api.getAddress(this.auth).subscribe(res => {
@@ -43,5 +45,8 @@ export class AddressComponent implements OnInit {
       this.route.navigate(['/home']);
     });
   }
+
+
+
 
 }

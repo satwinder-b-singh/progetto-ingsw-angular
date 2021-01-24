@@ -6,97 +6,74 @@
 </head>
 
 <body>
+
+
+<!--        ME LO SONO INVENTATO, ANCORA NON FUNZIONA
+<tbody>
+<tr address.name></tr>
+  <td class="user-col">
+    <div class="user">
+       <figure class="product-media">
+        <a href="#">
+          <img src="" alt="Product image">
+        </a>
+      </figure>
+
+      <h3 class="Email">
+        <a> {{user.email}}</a>
+      </h3>
+
+      <h3 class="Username">
+        <a> {{user.username}}</a>
+      </h3>
+
+      <h3 class="Password">
+        <a> {{user.password}}</a>
+      </h3>
+
+      <h3 class="Età">
+        <a> {{user.age}}</a>
+      </h3>
+
+
+    </div>
+  </td>
+</tbody>
+-->
+
+
+
+
+
+<!-- PARTO DA QUI -->
 <!--          <form     [formGroup]="checkoutForm" (ngSubmit)="checkout()">   -->
   <div class="row">
-    <div class="col-lg-9">
-      <h2 class="checkout-title">Dettagli Utente</h2><!-- End .checkout-title -->
-      <!-- <div class="row">  -->
-        <div class="col-sm-6">
-          <label >Email *</label>
-          <input type="text" formControlName="nome" class="form-control" placeholder="Mario" required>
-        </div><!-- End .col-sm-6 -->
+      <div class="col-lg-9">
+            <h2 class="checkout-title">Dettagli Utente</h2><!-- End .checkout-title -->
+            <!-- <div class="row">  -->
+              <div class="col-sm-6">
+                <label >Email *</label>
+                <input type="text" formControlName="nome" class="form-control" placeholder="SBAGLIATO" required>
+              </div><!-- End .col-sm-6 -->
+
+              <div class="col-sm-6">
+                <label>Username*</label>
+                <input formControlName="cognome" type="text" class="form-control" placeholder="SBAGLIATO" required>
+              </div><!-- End .col-sm-6 -->
+              <!--  </div> End .row -->
+
+            <div class="col-sm-6">
+              <label>Password*</label>
+              <input formControlName="cognome" type="text" class="form-control" placeholder="SBAGLIATO" required>
+            </div><!-- End .col-sm-6 -->
 
         <div class="col-sm-6">
-          <label>Username*</label>
-          <input formControlName="cognome" type="text" class="form-control" placeholder="Rossi" required>
-        </div><!-- End .col-sm-6 -->
-        <!--  </div> End .row -->
-
-      <div class="col-sm-6">
-        <label>Username*</label>
-        <input formControlName="cognome" type="text" class="form-control" placeholder="Rossi" required>
-      </div><!-- End .col-sm-6 -->
-
-      <label>Stato*</label>
-      <input type="text" formControlName="nazione" class="form-control" required placeholder="Italia">
-
-      <label>Indirizzo *</label>
-      <input type="text" class="form-control" formControlName="indirizzo" placeholder="Via .... N ..." required>
-      <input type="text" class="form-control" >
-
-
-
-        <div class="col-sm-6">
-          <label>Regione*</label>
-          <input type="text" formControlName="regione" class="form-control" placeholder="Lazio" required>
-        </div><!-- End .col-sm-6 -->
-      </div><!-- End .row -->
-
-      <div class="row">
-        <div class="col-sm-6">
-          <label>CAP *</label>
-          <input type="text" formControlName="CAP" class="form-control" placeholder="87039" required>
+          <label>Password*</label>
+          <input formControlName="cognome" type="text" class="form-control" placeholder="SBAGLIATO" required>
         </div><!-- End .col-sm-6 -->
 
-        <div class="col-sm-6">
-          <label>Numero Telefono *</label>
-          <input type="tel" formControlName="phone" class="form-control" placeholder="333857294" required>
-        </div><!-- End .col-sm-6 -->
-      </div><!-- End .row -->
 
-      <label>Email *</label>
-      <input type="email"  formControlName="email"class="form-control" placeholder="carezze@gmail.com" required>
-      <label>Commenti aggiuntivi</label>
-      <textarea class="form-control" cols="30" rows="4" placeholder="Note riguardanti le spedizioni"></textarea>
-    </div><!-- End .col-lg-9 -->
-    <aside class="col-lg-3">
-      <div class="summary">
-        <h3 class="summary-title">Il tuo ordine</h3><!-- End .summary-title -->
-
-        <table class="table table-summary">
-          <thead>
-          <tr>
-            <th>Prodotto</th>
-            <th>Totale</th>
-          </tr>
-          </thead>
-
-          <tbody>
-          <tr *ngFor="let cart of cartlist">
-            <td><a href="#">{{cart.productname}}</a></td>
-            <td>{{cart.price | currency:'EUR'}}</td>
-          </tr>
-          <tr class="summary-subtotal">
-            <td>Subtotal:</td>
-            <td>{{totalSum | currency:'EUR'}}</td>
-          </tr><!-- End .summary-subtotal -->
-          <tr>
-            <td>Spedizione:</td>
-            <td>Spedizione Gratuita</td>
-          </tr>
-          <tr class="summary-total">
-            <td>Totale:</td>
-            <td>{{totalSum | currency:'EUR'}}</td>
-          </tr><!-- End .summary-total -->
-          </tbody>
-        </table><!-- End .table table-summary -->
-
-        <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
-          <span class="btn-text">Conferma Ordine</span>
-          <span class="btn-hover-text">Procedi al Checkout</span>
-        </button>
-      </div><!-- End .summary -->
-    </aside><!-- End .col-lg-3 -->
+      </div><!-- End .col-lg-9 -->
   </div><!-- End .row -->
 
 
