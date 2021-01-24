@@ -32,7 +32,7 @@
                   <div class="product-gallery product-gallery-vertical">
                     <div class="row">
                        <figure class="product-main-image">
-                            <img id="product-zoom" src="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg" alt="product image">
+                            <img id="product-zoom" src="data:image/png;base64,{{product.productimage}}" data-zoom-image="assets/images/products/single/1-big.jpg" alt="product image">
 
                            <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                <i class="icon-arrows"></i>
@@ -76,7 +76,7 @@
                    </div><!-- End .product-price -->
 
                    <div class="product-content">
-                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                        <p>{{product.description}} </p>
                     </div><!-- End .product-content -->
 
                    
@@ -102,12 +102,8 @@
                    </div><!-- End .details-filter-row -->
 
                     <div class="product-details-action">
-                       <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                       <button (click)="addToCart(product)"  class="carrello">Aggiungi Al Carrello</button>
 
-                        <div class="details-action-wrapper">
-                           <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
-                               <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
-                        </div><!-- End .details-action-wrapper -->
                     </div><!-- End .product-details-action -->
 
                 </div><!-- End .product-details -->

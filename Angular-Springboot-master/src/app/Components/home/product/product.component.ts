@@ -13,8 +13,6 @@ import { EventEmitter } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   @Input() public product;
-
-  @Output() productAddToCart: EventEmitter<Product> = new EventEmitter<Product>();
   constructor(private http: HttpClient) { }
   @Output() showProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -23,9 +21,6 @@ export class ProductComponent implements OnInit {
 
   }
 
-  addToCart() {
-    this.productAddToCart.emit(this.product);
-  }
  show(id)
  {
   this.showProduct.emit(this.product);

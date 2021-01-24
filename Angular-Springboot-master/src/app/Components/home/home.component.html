@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col-3 align-left" *ngFor="let product of products">
     <div class="card-body">
-      <app-product [product]="product" (productAddToCart)="addToCart(product)"  (showProduct)="showProductPage(product.productid)">Loading...</app-product>
+      <app-product [product]="product" (showProduct)="showProductPage(product.productid)">Loading...</app-product>
     </div>
   </div>
 </div>

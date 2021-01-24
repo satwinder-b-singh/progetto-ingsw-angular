@@ -34,15 +34,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  addToCart(product: Product) {
-    if (this.auth_token!=null && this.api.isAuthenticated)
-    this.api.addCartItems(product, this.auth_token).subscribe(res => {
-		console.log(product);
-      console.log(res);
-    });
-    else
-      this.router.navigate(["/login"]);
-  }
+  
   showProductPage(product) {
 
     let navigationExtras: NavigationExtras = {
