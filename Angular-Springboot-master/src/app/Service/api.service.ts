@@ -31,6 +31,7 @@ export class ApiService {
   private ORD_API = 'http://localhost:8087/admin/viewOrders';
   private UPD_ORD_API = 'http://localhost:8087/admin/updateOrder';
   private CHECKO_API='http://localhost:8087/user/checkout';
+  private USER_BYID = 'http://localhost:8087/user/userDetail'
 
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
@@ -68,7 +69,11 @@ export class ApiService {
           { 'Content-Type': 'application/json' }
       });
   }
-  // Fetching all the products from the database
+   getUserbyId(auth_token: string): Observable<any> {
+
+     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth_token);
+    return this.http.post<any>(this.USER_BYID, null,{ headers: myheader } );
+   }
   getProducts(auth: string): Observable<any> {
 
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
@@ -77,8 +82,6 @@ export class ApiService {
   }
   getProductsById( id: number): Observable<any> {
 
-
-    //let body = { "id": id};
     return this.http.post<any>(this.PRDBY_ID, JSON.parse(String(id)));
 
   }
