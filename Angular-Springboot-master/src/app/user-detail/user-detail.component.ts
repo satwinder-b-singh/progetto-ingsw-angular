@@ -11,45 +11,30 @@ import {Address} from "../Model/address";
 })
 export class UserDetailComponent implements OnInit {
   user: User = {
+    id: 0,
     email: '',
     username: '',
     password: '',
     usertype: '',
     age: ''
   };
-  address: Address = {
-    nome: "",
-    cognome: "",
-    nazione: "",
-    indirizzo: "",
-    citta: "",
-    regione: "",
-    CAP: "",
-    email: "",
-    phone: ""
-
-  };
   auth: string;
-  constructor(private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private route: ActivatedRoute, private api: ApiService,) { }
 
   ngOnInit() {
+    console.log(this.auth);
     if (this.api.isAuthenticated) {
       this.auth = this.api.getToken();
+      console.log(this.auth);
       this.api.getUserbyId(this.auth).subscribe(
 
         res => {
           this.user = res.user;
+          console.log("DBDEUIFEN");
           console.log(this.user );
 
         }
         );
-      this.api.getAddress(this.auth).subscribe(res => {
-        if (res.map != null) {
-          this.address = res.map;
-        }
-      }, err => {
-        console.log(err);
-      });
 
       }
 

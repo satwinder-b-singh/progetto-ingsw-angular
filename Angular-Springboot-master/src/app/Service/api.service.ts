@@ -69,9 +69,9 @@ export class ApiService {
           { 'Content-Type': 'application/json' }
       });
   }
-   getUserbyId(auth_token: string): Observable<any> {
+   getUserbyId(auth: string): Observable<any> {
 
-     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth_token);
+     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
     return this.http.post<any>(this.USER_BYID, null,{ headers: myheader } );
    }
   getProducts(auth: string): Observable<any> {
