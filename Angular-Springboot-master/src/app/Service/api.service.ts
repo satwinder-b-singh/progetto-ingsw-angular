@@ -164,18 +164,20 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // Add product for Logged AdminUser
 
-  addProduct(auth: string, desc: string,
-    quan: string, price: string, prodname: string, image: File, categoria: string, size: string, sex: string): Observable<any> {
+  addProduct(auth: string, prodname: string,
+    desc: string, quan: string, price: string, categoria: string, size: string, sex: string, image: File): Observable<any> {
 
     const formData: FormData = new FormData();
-    formData.append('description', desc);
-    formData.append('price', price);
     formData.append('productname', prodname);
+    formData.append('description', desc);
     formData.append('quantity', quan);
-    formData.append('file', image);
+    formData.append('price', price);
     formData.append('categoria', categoria);
     formData.append('size', size);
     formData.append('sex', sex);
+    formData.append('file', image);
+
+
 	  //auth=".AUTH TOKEN.";
 
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
