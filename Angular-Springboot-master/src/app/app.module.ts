@@ -32,6 +32,7 @@ import { SummaryComponent } from './Components/home/checkout/summary/summary.com
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UomoComponent } from './Components/home/uomo/uomo.component';
 import { DonnaComponent } from './Components/home/donna/donna.component';
+import { ListautentiComponent } from './Components/admin/listautenti/listautenti.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -83,6 +84,10 @@ const appRoutes:Routes=[
   path:'admin/edit',
   component: EditItemComponent,
   canActivate:[AuthguardGuard]
+},
+{
+  path:'admin/listaU',
+  component: ListautentiComponent
 },
 {
   path:'admin/order',
@@ -157,7 +162,8 @@ const appRoutes:Routes=[
     SummaryComponent,
     UserDetailComponent,
     UomoComponent,
-    DonnaComponent
+    DonnaComponent,
+    ListautentiComponent
   ],
   imports: [
     BrowserModule,

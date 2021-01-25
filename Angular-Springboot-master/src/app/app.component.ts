@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './Service/api.service';
 import { Router } from '@angular/router';
 import {User} from './Model/user' ;
-const bar: User= { email:"visitator@gmail.com" , username: "visitator", password:"vistaws", usertype: "visitator", age:"21"};
+const bar: User= { id:0, email:"visitator@gmail.com" , username: "visitator", password:"vistaws", usertype: "visitator", age:"21"};
 
 @Component({
   selector: 'app-root',
