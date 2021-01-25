@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
     cognome: "",
     nazione: "",
     indirizzo: "",
-    città: "",
+    citta: "",
     regione: "",
     CAP: "",
     email: "",

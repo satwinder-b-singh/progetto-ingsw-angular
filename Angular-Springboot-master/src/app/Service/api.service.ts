@@ -150,6 +150,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // update Address of logged User
   upAddress(auth: string, adr: Address): Observable<any> {
+    console.log("Sto stampando adr: " + adr);
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
     return this.http.post<any>(this.ADR_API, adr, { headers: myheader });
   }

@@ -1,54 +1,106 @@
+<head>
+  <link  type="text/css" rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
+  <link  type="text/css" rel="stylesheet" href="assets/css/plugins/magnific-popup/magnific-popup.css">
+  <link type="text/css"rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link type="text/css"  rel="stylesheet" href="assets/css/style.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/plugins/nouislider/nouislider.css">
+</head>
 
-<div class="container ">
-    <br>
-    <div class="row">
-        <div class="offset-2 col-6 ">
-            <form class="form-horizontal shadow p-3 mb-5 bg-white rounded" #f="ngForm" (ngSubmit)=" addAddress()" novalidate>
-                <div class="form-group">
-                    <label class="control-label col-m-10" for="address">Address: </label>
+<body>
+    <div class="container ">
+        <br>
+        <div class="row">
+            <div class="offset-2 col-6 ">
+                <form class="form-horizontal shadow p-3 mb-5 bg-white rounded" [formGroup]="addressForm"  (ngSubmit)=" addAddress()" novalidate>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-m-10" >Nome: </label>
                     <div class="col-m-10">
-                        <input type="text" class="form-control" name="address" [(ngModel)]="model.address" placeholder="Address"/>
+                      <input type="text" formControlName="nome" name="Mario"  [(ngModel)]="model.nome" placeholder="nome"/>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-m-10" for="city">City: </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-m-10" >Cognome: </label>
                     <div class="col-m-10">
-                        <input type="text" class="form-control" name="city" [(ngModel)]="model.city" placeholder="Atlanta"/>
+                      <input type="text" formControlName="cognome" name="Rossi"  [(ngModel)]="model.cognome" placeholder="cognome"/>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-m-10" for="state">State: </label>
-                    <div class="col-m-10">
-                        <input type="text" class="form-control" name="state" [(ngModel)]="model.state" placeholder="Georgia"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label class="control-label col-m-10" for="country">Country: </label>
+                  </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-m-10" >Nazione: </label>
                         <div class="col-m-10">
-                            <input type="text" class="form-control" name="country" [(ngModel)]="model.country" placeholder="US"/>
+                            <input type="text" formControlName="nazione" name="nazione"  [(ngModel)]="model.nazione" placeholder="nazione"/>
                         </div>
                     </div>
-                <div class="form-group">
-                    <label class="control-label col-m-10" for="zipcode">Zipcode: </label>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-m-10" >Regione: </label>
+                        <div class="col-m-10">
+                            <input type="text" formControlName="regione"  name="regione" [(ngModel)]="model.regione" placeholder="regione"/>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-m-10" >Città: </label>
+                        <div class="col-m-10">
+                            <input type="text" formControlName="citta" name="citta" [(ngModel)]="model.citta" placeholder="citta"/>
+                        </div>
+                    </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-m-10" >Indirizzo: </label>
                     <div class="col-m-10">
-                        <input type="text" type="number" class="form-control" name="zipcode" [(ngModel)]="model.zipcode" placeholder="22222"/>
+                      <input type="text" formControlName="indirizzo" name="indirizzo" [(ngModel)]="model.indirizzo" placeholder="indirizzo"/>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-m-10" for="phone">Phone Number: </label>
+                  </div>
+
+
+                    <div class="form-group">
+                            <label class="control-label col-m-10" >CAP: </label>
+                            <div class="col-m-10">
+                                <input type="text"  formControlName="CAP" name="CAP" [(ngModel)]="model.CAP" placeholder="CAP"/>
+                            </div>
+                    </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-m-10" >Email: </label>
                     <div class="col-m-10">
-                        <input type="number" class="form-control" name="phone" [(ngModel)]="model.phonenumber" placeholder="+12342223456"/>
+                      <input type="text"  formControlName="email" name="mariorossi@mail.com" [(ngModel)]="model.email" placeholder="email"/>
                     </div>
-                </div>
-                <br />
-                <div class="form-group">
-                    <div class="col-m-offset-2 col-m-4">
-                        <button type="submit" class="btn  btn-primary" name="signup">
-                            Completa la Registrazione
-                        </button>
+                  </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-m-10" >Telefono: </label>
+                        <div class="col-m-10">
+                            <input type="text"  formControlName="phone"name="phone" [(ngModel)]="model.phone" placeholder="phone"/>
+                        </div>
                     </div>
-                </div>
-            </form>
+
+
+
+
+                  <br/>
+
+                  <div class="form-group">
+                        <div class="col-m-offset-2 col-m-4">
+                            <button type='submit' class="btn  btn-primary" >
+                                OK
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</body>
+
+
+
+
