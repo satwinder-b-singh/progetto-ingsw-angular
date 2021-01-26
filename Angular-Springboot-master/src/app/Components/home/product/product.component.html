@@ -4,5 +4,7 @@
                 <img (click)="show(product.id)" src="data:image/png;base64,{{product.productimage}}" class="img-responsive" height="150px"
                         width="200px" alt="Image">
                 <h5 class="card-text "> Size del prodotto: {{product.size}}</h5>
+                <h5 class="card-text "> Prezzo: {{product.price | currency:'EUR'}}</h5>
         </div>
 </div>
+
