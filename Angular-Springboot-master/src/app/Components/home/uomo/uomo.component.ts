@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from "../../../Model/product";
+import {ApiService} from "../../../Service/api.service";
 
 @Component({
   selector: 'uomo',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UomoComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
+  sex: string = "M";
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getProductsBySex(this.sex).subscribe(
+      res => {
+        this.products = res.oblist;
+      }
+    );
   }
 
 }
