@@ -30,7 +30,7 @@ export class NavigationComponent implements OnInit {
   logout() {
     this.loggedType = "home";
     this.auth.removeToken();
-    this.route.navigate(['/login']);
+    this.route.navigate(['/home']);
   }
 
 

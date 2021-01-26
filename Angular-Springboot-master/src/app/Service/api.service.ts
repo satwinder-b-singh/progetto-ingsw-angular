@@ -231,9 +231,9 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
     const formData: FormData = new FormData();
     formData.append('description', desc);
+    formData.append('quantity', quan);
     formData.append('price', price);
     formData.append('productname', prodname);
-    formData.append('quantity', quan);
     formData.append('file', image);
     formData.append('productId', productid);
     formData.append('categoria', categroia);

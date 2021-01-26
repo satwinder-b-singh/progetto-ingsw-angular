@@ -54,8 +54,7 @@ const appRoutes:Routes=[
 ,
 {
   path:'home',
-  component: HomeComponent,
-  canActivate:[AuthguardGuard]
+  component: HomeComponent
 },
   {
     path:'visitor/detailProduct',
@@ -75,10 +74,12 @@ const appRoutes:Routes=[
 {
   path: 'home/cart/checkout',
   component: CheckoutComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path: 'home/cart/checkout/summary',
   component: SummaryComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin/edit',
@@ -87,7 +88,8 @@ const appRoutes:Routes=[
 },
 {
   path:'admin/listaU',
-  component: ListautentiComponent
+  component: ListautentiComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin/order',

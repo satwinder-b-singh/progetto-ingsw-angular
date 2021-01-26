@@ -16,16 +16,16 @@ export class EditItemComponent implements OnInit {
     productname: '',
     price: 0,
     quantity: 0,
-    category: "",
-    size: "",
-    sex: "",
+    category: '',
+    size: '',
+    sex: '',
     productimage: null
   };
   products: Product[] = [];
   fileToUpload: File = null;
   auth: string;
   prodid: string;
-  imageUrl: string = "/assets/img/noimage.png";
+  imageUrl = '/assets/img/noimage.png';
 
   constructor(private route: ActivatedRoute, private api: ApiService) {
     if (this.api.isAuthenticated) {
@@ -45,27 +45,27 @@ export class EditItemComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      console.log("siamo qi");
-      console.log(params["user"]);
+      console.log('siamo qi');
+      console.log(params['user']);
       console.log(this.prodid);
-      this.prodid = params["user"];
+      this.prodid = params['user'];
       console.log(this.prodid);
     });
   }
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
-    var reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = (event: any) => {
       this.imageUrl = event.target.result;
-    }
+    };
     reader.readAsDataURL(this.fileToUpload);
   }
 
-  updateProd(desc, quan, price, prodname, image,cat,size,sex) {
+  updateProd(prodname, desc, quan, price, cat, size, sex, image) {
 
     console.log( this.product.productid);
-    this.api.updateProduct(this.auth, desc.value, quan.value, price.value, prodname.value, this.fileToUpload, this.prodid , cat.value,size.value,sex.value).subscribe(res => {
+    this.api.updateProduct(this.auth, desc.value, quan.value, price.value, prodname.value, this.fileToUpload, this.prodid , cat.value, size.value, sex.value).subscribe(res => {
       console.log(res);
     });
   }
