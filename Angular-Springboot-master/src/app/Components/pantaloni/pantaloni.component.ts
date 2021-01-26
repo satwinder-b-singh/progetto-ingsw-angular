@@ -10,13 +10,13 @@ import {ApiService} from "../../Service/api.service";
 export class PantaloniComponent implements OnInit {
 
   products: Product[] = [];
-  categoria: string = "Pantaloni";
+  categoria: string = "Pantalone";
 
   constructor(private api: ApiService) { }
 
 
   ngOnInit() {
-    this.api.getProductsByCategroy(this.categoria ).subscribe(
+    this.api.getProductsByCategroy(this.categoria).subscribe(
       res => {
         this.products = res.oblist;
       }

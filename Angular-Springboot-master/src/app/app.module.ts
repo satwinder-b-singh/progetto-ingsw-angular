@@ -29,6 +29,10 @@ import { GiubottiComponent } from './Components/giubotti/giubotti.component';
 import { FiltriComponent } from './Components/filtri/filtri.component';
 import { CheckoutComponent } from './Components/home/checkout/checkout.component';
 import { SummaryComponent } from './Components/home/checkout/summary/summary.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UomoComponent } from './Components/home/uomo/uomo.component';
+import { DonnaComponent } from './Components/home/donna/donna.component';
+import { ListautentiComponent } from './Components/admin/listautenti/listautenti.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -82,6 +86,10 @@ const appRoutes:Routes=[
   canActivate:[AuthguardGuard]
 },
 {
+  path:'admin/listaU',
+  component: ListautentiComponent
+},
+{
   path:'admin/order',
   component: OrderItemComponent,
   canActivate:[AuthguardGuard]
@@ -110,7 +118,22 @@ const appRoutes:Routes=[
   path:'home/pantaloni',
   component: CamicieComponent,
   canActivate:[AuthguardGuard]
-}
+},
+{
+  path:'home/user-detail',
+  component: UserDetailComponent,
+  canActivate:[AuthguardGuard]
+},
+  {
+    path:'home/uomo',
+    component: UomoComponent,
+    canActivate:[AuthguardGuard]
+  },
+  {
+    path:'home/donna',
+    component: DonnaComponent,
+    canActivate:[AuthguardGuard]
+  }
 
 ];
 
@@ -136,7 +159,11 @@ const appRoutes:Routes=[
     GiubottiComponent,
     FiltriComponent,
     CheckoutComponent,
-    SummaryComponent
+    SummaryComponent,
+    UserDetailComponent,
+    UomoComponent,
+    DonnaComponent,
+    ListautentiComponent
   ],
   imports: [
     BrowserModule,

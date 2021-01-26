@@ -41,8 +41,8 @@ export class AdminComponent implements OnInit {
   hide() {
     this.showAdd = false;
   }
-  addProd(desc, quan, price, prodname, image,cat,size,sex) {
-    this.api.addProduct(this.auth, desc.value, quan.value, price.value, prodname.value, this.fileToUpload,cat.value,size.value,cat.value).subscribe(res => {
+  addProd(prodname, desc, quan, price, cat, size, sex, image) {
+    this.api.addProduct(this.auth, prodname.value, desc.value, quan.value, price.value, cat.value, size.value, sex.value, this.fileToUpload).subscribe(res => {
       this.products = res.oblist;
     });
   }

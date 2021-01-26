@@ -31,6 +31,9 @@ export class ApiService {
   private ORD_API = 'http://localhost:8087/admin/viewOrders';
   private UPD_ORD_API = 'http://localhost:8087/admin/updateOrder';
   private CHECKO_API='http://localhost:8087/user/checkout';
+  private USER_BYID = 'http://localhost:8087/user/getUserById'
+  private LISTU_APi = 'http://localhost:8087/admin/getUsers';
+
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
 
   }
@@ -43,13 +46,9 @@ export class ApiService {
           { 'Content-Type': 'application/json' }
       });
   }
-  checkout(address: Address): Observable<any>{
-    return this.http.post(this.REG_API,
-      JSON.stringify(address),
-      {
-        headers:
-          { 'Content-Type': 'application/json' }
-      });
+  checkout( auth: string): Observable<any>{//address: Address,
+    const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    return this.http.post<any>(this.CHECKO_API, { headers: myheader });//JSON.stringify(address)
   }
   // validating user credentials
   userLogin(user: User): Observable<any> {
@@ -70,7 +69,11 @@ export class ApiService {
           { 'Content-Type': 'application/json' }
       });
   }
-  // Fetching all the products from the database
+   getUserbyId(auth: string): Observable<any> {
+
+     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    return this.http.post<any>(this.USER_BYID, null,{ headers: myheader } );
+   }
   getProducts(auth: string): Observable<any> {
 
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
@@ -79,8 +82,6 @@ export class ApiService {
   }
   getProductsById( id: number): Observable<any> {
 
-
-    //let body = { "id": id};
     return this.http.post<any>(this.PRDBY_ID, JSON.parse(String(id)));
 
   }
@@ -95,6 +96,13 @@ export class ApiService {
 
 
     return this.http.post<any>(this.VISITOR_PRDLST_API, null);
+
+  }
+  getListaUtenti(auth: string): Observable<any> {
+
+    console.log("APIIII");
+    const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    return this.http.post<any>(this.LISTU_APi,null, { headers: myheader });
 
   }
   getProductsFiltri(size: string, category: string, sesso: string): Observable<any> {
@@ -149,6 +157,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // update Address of logged User
   upAddress(auth: string, adr: Address): Observable<any> {
+    console.log("Sto stampando adr: " + adr);
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
     return this.http.post<any>(this.ADR_API, adr, { headers: myheader });
   }
@@ -162,18 +171,20 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // Add product for Logged AdminUser
 
-  addProduct(auth: string, desc: string,
-    quan: string, price: string, prodname: string, image: File, categoria: string, size: string, sex: string): Observable<any> {
+  addProduct(auth: string, prodname: string,
+    desc: string, quan: string, price: string, categoria: string, size: string, sex: string, image: File): Observable<any> {
 
     const formData: FormData = new FormData();
-    formData.append('description', desc);
-    formData.append('price', price);
     formData.append('productname', prodname);
+    formData.append('description', desc);
     formData.append('quantity', quan);
-    formData.append('file', image);
+    formData.append('price', price);
     formData.append('categoria', categoria);
     formData.append('size', size);
     formData.append('sex', sex);
+    formData.append('file', image);
+
+
 	  //auth=".AUTH TOKEN.";
 
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
@@ -209,6 +220,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   // update Product for Logged Admin User
   updateProduct(auth: string, desc: string,
+                // tslint:disable-next-line:max-line-length
     quan: string, price: string, prodname: string, image: File, productid: any, categroia: string, size: string, sex: string): Observable<any> {
 
     const formData: FormData = new FormData();

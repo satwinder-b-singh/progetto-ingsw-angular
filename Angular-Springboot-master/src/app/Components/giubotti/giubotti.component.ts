@@ -9,13 +9,13 @@ import {Product} from '../../Model/product';
 })
 export class GiubottiComponent implements OnInit {
   products: Product[] = [];
- categoria: string = "Giubotti";
+ categoria: string = "Giubotto";
 
   constructor(private api: ApiService) { }
 
 
   ngOnInit() {
-    this.api.getProductsVisitor( ).subscribe(
+    this.api.getProductsByCategroy(this.categoria).subscribe(
       res => {
         this.products = res.oblist;
       }

@@ -7,20 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltriComponent implements OnInit {
 
+ private ele: any;
   constructor() { }
 
   ngOnInit() {
   }
 
-  azzera(){
-    var ele = document.getElementsByName("category");
-   for(var i=0;i<ele.length;i++)
-      ele[i].checked = false;
-    ele = document.getElementsByName("size");
-    for(var i=0;i<ele.length;i++)
-         ele[i].checked = false;
-    ele = document.getElementsByName("sesso");
-    for(var i=0;i<ele.length;i++)
-        ele[i].checked = false;
+  azzera() {
+     this.ele = document.getElementsByName('category');
+    for (let i = 0; i < this.ele .length; i++) {
+      this.ele[i].checked = false;
+    }
+    this.ele = document.getElementsByName('size');
+    for (let i = 0; i < this.ele.length; i++) {
+      this.ele[i].checked = false;
+    }
+    this.ele = document.getElementsByName('sesso');
+    for (let i = 0; i < this.ele.length; i++) {
+      this.ele[i].checked = false;
+    }
   }
 }
