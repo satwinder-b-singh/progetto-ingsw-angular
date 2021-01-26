@@ -29,7 +29,7 @@ export class UserDetailComponent implements OnInit {
       this.api.getUserbyId(this.auth).subscribe(
 
         res => {
-          this.user = res.user;
+          this.user = res.object;
           console.log("DBDEUIFEN");
           console.log(this.user );
 

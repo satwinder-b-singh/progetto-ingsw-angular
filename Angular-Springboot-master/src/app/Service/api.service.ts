@@ -31,7 +31,7 @@ export class ApiService {
   private ORD_API = 'http://localhost:8087/admin/viewOrders';
   private UPD_ORD_API = 'http://localhost:8087/admin/updateOrder';
   private CHECKO_API='http://localhost:8087/user/checkout';
-  private USER_BYID = 'http://localhost:8087/user/userDetail'
+  private USER_BYID = 'http://localhost:8087/user/getUserById'
   private LISTU_APi = 'http://localhost:8087/admin/getUsers';
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
@@ -98,10 +98,11 @@ export class ApiService {
     return this.http.post<any>(this.VISITOR_PRDLST_API, null);
 
   }
-  getListaUtenti( ): Observable<any> {
+  getListaUtenti(auth: string): Observable<any> {
 
     console.log("APIIII");
-    return this.http.post<any>(this.LISTU_APi, null);
+    const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    return this.http.post<any>(this.LISTU_APi,null, { headers: myheader });
 
   }
   getProductsFiltri(size: string, category: string, sesso: string): Observable<any> {

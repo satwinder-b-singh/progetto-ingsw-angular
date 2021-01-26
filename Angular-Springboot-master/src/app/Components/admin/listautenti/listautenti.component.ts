@@ -9,11 +9,14 @@ import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
 })
 export class ListautentiComponent implements OnInit {
   users: User[] = [];
+  auth: string;
   constructor(private api: ApiService, private router: Router,private _route : ActivatedRoute) { }
   
   ngOnInit() {
+    if(this.api.isAuthenticated)
+    this.auth=this.api.getToken();
     console.log("CISJOIDJ");
-    this.api.getListaUtenti().subscribe(
+    this.api.getListaUtenti(this.auth).subscribe(
       res => {
         console.log("CIAO")
         this.users = res.registredUser;
