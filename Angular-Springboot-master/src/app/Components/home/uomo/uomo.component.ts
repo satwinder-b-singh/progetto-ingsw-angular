@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import {Product} from "../../../Model/product";
 import {ApiService} from "../../../Service/api.service";
 
@@ -12,7 +13,7 @@ export class UomoComponent implements OnInit {
   products: Product[] = [];
   sex: string = "M";
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,private router: Router,private _route : ActivatedRoute) { }
 
   ngOnInit() {
     this.api.getProductsBySex(this.sex).subscribe(
@@ -21,5 +22,21 @@ export class UomoComponent implements OnInit {
       }
     );
   }
+  attivaFiltri(products) {
 
+    console.log(products);
+
+    }
+    showProductPage(product) {
+      console.log(product)
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          "user": product
+  
+        }
+      };
+  
+      this.router.navigate(['/visitor/detailProduct'], navigationExtras  );
+  
+      }
 }

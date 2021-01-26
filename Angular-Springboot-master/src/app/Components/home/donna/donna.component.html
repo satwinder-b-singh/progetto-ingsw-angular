@@ -17,7 +17,7 @@
       <div data-index="0"  class="text-tab-content grid-prop current-tab "  id="imTextObject_4_02_tab0" style="opacity: 1; ">
         <div class="row">
           <div class="card-body" *ngFor="let product of products">
-            <app-product [product]="product" >Loading...</app-product>
+            <app-product [product]="product" (showProduct)="showProductPage(product.productid)">Loading...</app-product>
           </div>
         </div>
       </div>

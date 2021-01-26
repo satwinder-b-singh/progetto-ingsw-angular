@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
 
   showProductPage(product) {
-
+    console.log(product)
     let navigationExtras: NavigationExtras = {
       queryParams: {
         "user": product

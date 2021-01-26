@@ -53,22 +53,23 @@
                         
                     </div><!-- End .rating-container -->
 
-                    <div class="product-price">
-                        {{product.price}}
-                   </div><!-- End .product-price -->
+                    
                    
                     <div class="details-filter-row details-row-size">
-                        <label for="size">La size selezionata è:</label>
+                        <h5>La size selezionata è: {{product.size}}</h5>
                        <div class="select">
-                            <h4>{{product.size}}</h4>
+                           
                        </div><!-- End .select-custom -->
 
                       </div><!-- End .details-filter-row -->
-
+                    
+                    <div class="product-price">
+                      <h5>  {{product.price  | currency:'EUR'}}</h5>
+                   </div><!-- End .product-price -->
                     <div class="details-filter-row details-row-size">
-                        <label for="qty">Quantita disponibili:</label>
+                        <h5>Quantita disponibili:</h5>
                         <div class="product-details-quantity">
-                           <label>Nel magazzino sono rimasti {{product.quantity}}</label>
+                           <h5>Nel magazzino sono rimasti {{product.quantity}} pezzi del prodotto</h5>
                         </div><!-- End .product-details-quantity -->
                    </div><!-- End .details-filter-row -->
 
