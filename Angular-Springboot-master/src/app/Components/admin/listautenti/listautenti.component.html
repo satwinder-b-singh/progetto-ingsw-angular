@@ -1,21 +1,36 @@
-<div>
-  <table>
-    <caption>
-    <p>I miei dati</p>
-    </caption>
-    <thead>
-    <tr><th>Username</th><th>Password</th><th>Email</th><th>Età</th><th>UserType</th></tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{user.username}}</td>
-      <td>{{user.password}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.eta}}</td>
-      <td>{{user.usertype}}</td>
-    </tr>
-    
-    </tbody>
-    </table>
+<head>
 
-</div>
+  <!-- Plugins CSS File -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+
+  <main class="main">
+    <table>
+      <caption>
+      <p>I miei dati</p>
+      </caption>
+      <thead>
+      <tr><th>Username</th><th>Password</th><th>Email</th><th>Età</th><th>UserType</th></tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.eta}}</td>
+        <td>{{user.usertype}}</td>
+      </tr>
+      
+      </tbody>
+      </table>
+      
+  </main><!-- End .main -->
+
+</div> <!-- End .page-wrapper -->
+</body>
