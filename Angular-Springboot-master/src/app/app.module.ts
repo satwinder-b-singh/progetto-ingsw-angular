@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ProfiloComponent} from './Components/profilo/profilo.component';
 
 import { AppComponent } from './app.component';
 import {StorageServiceModule} from 'angular-webstorage-service';
@@ -120,6 +121,7 @@ const appRoutes:Routes=[
   canActivate:[AuthguardGuard]
 },
 {
+ 
   path:'home/user-detail',
   component: UserDetailComponent,
   canActivate:[AuthguardGuard]
@@ -134,6 +136,12 @@ const appRoutes:Routes=[
     component: DonnaComponent,
     canActivate:[AuthguardGuard]
   }
+ 
+  path:'home/profilo',
+  component: ProfiloComponent,
+  canActivate:[AuthguardGuard]
+}
+ 
 
 ];
 
@@ -164,6 +172,8 @@ const appRoutes:Routes=[
     UomoComponent,
     DonnaComponent,
     ListautentiComponent
+    ProfiloComponent
+
   ],
   imports: [
     BrowserModule,
