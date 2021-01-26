@@ -29,8 +29,10 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.apiService.userLogin(this.loginForm.value).
       subscribe(res => {
+        
         // tslint:disable-next-line:triple-equals
         if (res.status == '200') {
+          window.location.reload();
           this.apiService.storeToken(res.auth_TOKEN, "customer");
           this.router.navigate(['/home']);
           this.error = false;
@@ -38,10 +40,12 @@ export class LoginComponent implements OnInit {
           this.apiService.adminLogin(this.loginForm.value).
             subscribe(res => {
               if (res.status == "200") {
+                window.location.reload();
                 console.log("passo da admin");
                 this.apiService.storeToken(res.auth_TOKEN, "admin");
                 this.router.navigate(['/admin']);
               } else {
+                alert("CREDENZIALI ERRATE, RIPROVA")
                 this.router.navigate(['/login']);
               }
               this.error = false;

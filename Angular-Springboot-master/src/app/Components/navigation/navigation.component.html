@@ -1,157 +1,78 @@
-<!--
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01" [ngSwitch]="loggedType">
-      <div *ngSwitchCase="'home'">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/login">Login</a>
-          </li>
-        </ul>
-      </div>
-      <div class="ml-auto" *ngSwitchCase="'customer'">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/home/address">Address</a>
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/home/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <img src="/Angular-Springboot-master/src/assets/images/stores/cart.png" width="20" height="20" routerLink="/home/cart">
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link " (click)="logout()" style="cursor: pointer; float: right;">Log out</a>
-          </li>
-        </ul>
-      </div>
-      <div class="ml-auto" *ngSwitchCase="'admin'">
-        <ul class="navbar-nav mt-2 mt-lg-0 ">
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/admin">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link" routerLink="/admin/order">Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class=" nav-link" (click)="logout()" style="cursor: pointer;">Log out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
 
+<head>
+  <!-- QUESTO E' LO STILE CON CSS, DEVO VEDERE COME FARE PER PASSARLO NEL FILE CSS-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    OK, FINO A QUI FUNZIONA QUELLO DI PRIMA    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-
-<!-- QUESTO E' LO STILE CON CSS, DEVO VEDERE COME FARE PER PASSARLO NEL FILE CSS-->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/plugins/owl-carousel/owl.carousel.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<!------------------------------------------------------------------------------>
-
-
-
+<body>
   <div class="page-wrapper" [ngSwitch]="loggedType" >
 
     <header class="header" *ngSwitchCase="'home'">
-    <div class="header-middle sticky-header">
-      <div class="container">
-          <div class="header-left">
+          <div class="header-middle sticky-header">
+            <div class="container">
+                <div class="header-left">
 
-              <a  class="logo">
-                  <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
-              </a>
+                    <a  class="logo">
+                        <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
+                    </a>
 
-            <!--
-                <nav class="main-nav">
+                    <nav class="main-nav">
+                      <ul class="menu sf-arrows">
+                              <a  routerLink="/home/about"  >AboutUs</a>
+                     </ul>
+                    </nav>
+
+                  <nav class="main-nav">
                     <ul class="menu sf-arrows">
-                            <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
-                  </ul>
-                </nav>    -->
+
+                      <a  routerLink="/home/uomo" >Uomo</a>
+                    </ul>
+                  </nav>
+
+                  <nav  class="main-nav">
+                    <ul style="margin-top:23px;"   >
+
+                      <a  routerLink="/home/donna" >Donna</a>
+
+                    </ul>
+                  </nav>
+                  <nav class="main-nav">
+                    <ul class="menu sf-arrows" >
+                      <a style="visibility: hidden;"> Visibilita</a>
+                    </ul>
+                  </nav>
+
+            </div>
+
+            <div class="container">
+                <div class="header-right">
 
 
+                    <nav class="main-nav">
+                      <ul class="menu sf-arrows">
+                              <a routerLink="/login"  >Login</a>
+                    </ul>
+                    </nav>
 
-              <nav class="main-nav">
-                <ul class="menu sf-arrows">
-                        <a  routerLink="/home/about"  >AboutUs</a>
-               </ul>
-            </nav>
+                    <nav class="main-nav">
+                      <ul class="menu sf-arrows">
+                              <a routerLink="/register" >Registrati</a>
+                    </ul>
+                    </nav>
 
-              <nav class="main-nav">
-                <ul class="menu sf-arrows">
-
-                        <a  routerLink="/home/camicie" >Camicie</a>
-               </ul>
-            </nav>
-
-            <nav class="main-nav">
-              <ul class="menu sf-arrows">
-
-                      <a  routerLink="/home/maglie" >Maglie</a>
-             </ul>
-          </nav>
-
-          <nav class="main-nav">
-            <ul class="menu sf-arrows">
-
-                    <a  routerLink="/home/giubotti">Giubotti</a>
-           </ul>
-        </nav>
-
-        <nav class="main-nav">
-          <ul class="menu sf-arrows">
-
-                  <a  routerLink="/home/pantaloni" >Pantaloni</a>
-         </ul>
-      </nav>
-
-      </div>
-
-      <div class="container">
-          <div class="header-right">
-
-
-              <nav class="main-nav">
-                <ul class="menu sf-arrows">
-                        <a routerLink="/login"  >Login</a>
-              </ul>
-            </nav>
-
-              <nav class="main-nav">
-                <ul class="menu sf-arrows">
-                        <a routerLink="/register" >Registrati</a>
-              </ul>
-            </nav>
-
-
-
-
-              <nav class="main-nav">
-                <ul class="menu sf-arrows">
-
+                    <nav class="main-nav">
+                      <ul class="menu sf-arrows">
                         <a routerLink="/home/cart" >Carrello</a>
-              </ul>
-            </nav>
+                    </ul>
+                  </nav>
 
 
-              </div>
+                </div>
+             </div>
             </div>
-
-            </div>
-        </div>
-
+          </div>
     </header>
 
     <header class="header" *ngSwitchCase="'customer'">
@@ -163,15 +84,6 @@
               <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
             </a>
 
-            <!--
-                <nav class="main-nav">
-                    <ul class="menu sf-arrows">
-                            <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
-                  </ul>
-                </nav>    -->
-
-
-
             <nav class="main-nav">
               <ul class="menu sf-arrows">
                 <a  routerLink="/home/about"  >AboutUs</a>
@@ -179,27 +91,27 @@
             </nav>
 
             <nav class="main-nav">
-              <ul class="menu sf-arrows">
-
-                <a  routerLink="/home/camicie" >Camicie</a>
+              <ul class="menu sf-arrows" >
+                <a  routerLink="/home/uomo" >Uomo</a>
               </ul>
             </nav>
 
             <nav class="main-nav">
-              <ul class="menu sf-arrows">
-
-                <a  routerLink="/home/maglie" >Maglie</a>
+              <ul class="menu sf-arrows" >
+                <a  routerLink="/home/donna" >Donna</a>
               </ul>
             </nav>
 
-            <nav class="main-nav">
-              <ul class="menu sf-arrows">
+            <div>
 
-                <a  routerLink="/home/giubotti">Giubotti</a>
-              </ul>
-            </nav>
+              <div></div>
+            </div>
 
             <nav class="main-nav">
+ 
+              <ul class="menu sf-arrows" >
+                <a style="visibility: hidden;"> Visibilita</a>
+ 
               <ul class="menu sf-arrows">
 
                 <a  routerLink="/home/profilo" >Pantaloni</a>
@@ -210,8 +122,10 @@
               <ul class="menu sf-arrows">
 
                 <a  routerLink="/home/profilo" >Profilo</a>
+ 
               </ul>
             </nav>
+
 
           </div>
 
@@ -222,6 +136,18 @@
               <nav class="main-nav">
                 <ul class="menu sf-arrows">
                   <a (click)="logout()" > Logout</a>
+                </ul>
+              </nav>
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a  routerLink="/home/user-detail"  >Profilo</a>
+                </ul>
+              </nav>
+
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <a  routerLink="/home/address"  >Indirizzo</a>
                 </ul>
               </nav>
 
@@ -249,48 +175,23 @@
               <img class=" nav-link" routerLink="/home"  src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
             </a>
 
-            <!--
-                <nav class="main-nav">
-                    <ul class="menu sf-arrows">
-                            <a href="index.html" routerLink="/home/about"  class="sf-with-ul">AboutUs</a>
-                  </ul>
-                </nav>    -->
-
-
-
             <nav class="main-nav">
               <ul class="menu sf-arrows">
                 <a  routerLink="/home/about"  >AboutUs</a>
               </ul>
             </nav>
-
             <nav class="main-nav">
               <ul class="menu sf-arrows">
-
-                <a  routerLink="/home/camicie" >Camicie</a>
+                <a  routerLink="/admin/listaU"  >Lista Utenti</a>
               </ul>
             </nav>
 
-            <nav class="main-nav">
-              <ul class="menu sf-arrows">
 
-                <a  routerLink="/home/maglie" >Maglie</a>
-              </ul>
-            </nav>
 
-            <nav class="main-nav">
-              <ul class="menu sf-arrows">
 
-                <a  routerLink="/home/giubotti">Giubotti</a>
-              </ul>
-            </nav>
 
-            <nav class="main-nav">
-              <ul class="menu sf-arrows">
 
-                <a  routerLink="/home/pantaloni" >Pantaloni</a>
-              </ul>
-            </nav>
+
 
           </div>
 
@@ -324,8 +225,6 @@
       </div>
 
     </header>
-
-
-
   </div>
+</body>
 

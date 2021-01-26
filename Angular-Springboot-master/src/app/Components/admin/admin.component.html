@@ -6,7 +6,7 @@
                         <button class="mybtn btn btn-secondary" (click)="hide()" *ngIf="showAdd">Click to hide</button>
                 </div>
         </div>
-        <form class="form-horizontal shadow p-3 mb-5 bg-white rounded " #f="ngForm" (ngSubmit)="f.form.valid && addProd(desc,quan,price,prodname,image,cat,size,sex)"
+        <form class="form-horizontal shadow p-3 mb-5 bg-white rounded " #f="ngForm" (ngSubmit)="f.form.valid && addProd(prodname,desc,quan,price,cat,size,sex,image)"
                 *ngIf="showAdd">
                 <div class="row">
                         <div class="col-6">

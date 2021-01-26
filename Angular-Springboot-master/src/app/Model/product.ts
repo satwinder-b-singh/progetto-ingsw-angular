@@ -1,12 +1,12 @@
 export interface Product {
     productid: number;
-    description: string;
     productname: string;
-    price: any;
+    description: string;
     quantity: any;
+    price: any;
     category: string;
     size: string;
     sex: string;
     productimage: File;
-    
+
 }
