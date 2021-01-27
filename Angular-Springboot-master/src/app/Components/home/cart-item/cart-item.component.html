@@ -5,22 +5,6 @@
 
 <!-- molla/cart.html  22 Nov 2019 09:55:06 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Molla - Bootstrap eCommerce Template</title>
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/Angular-Springboot-master/src/assets/images/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/Angular-Springboot-master/src/assets/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/Angular-Springboot-master/src/assets/images/icons/favicon-16x16.png">
-    <link rel="manifest" href="/Angular-Springboot-master/src/assets/images/icons/site.html">
-    <link rel="mask-icon" href="/Angular-Springboot-master/src/assets/images/icons/safari-pinned-tab.svg" color="#666666">
-    <link rel="shortcut icon" href="/Angular-Springboot-master/src/assets/images/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
-    <meta name="msapplication-TileColor" content="#cc9966">
-    <meta name="msapplication-config" content="/Angular-Springboot-master/src/assets/images/icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="/Angular-Springboot-master/src/assets/css/bootstrap.min.css">
     <!-- Main CSS File -->
@@ -67,13 +51,13 @@
                       </h3><!-- End .product-title -->
                     </div><!-- End .product -->
                   </td>
-                  <td class="price-col">{{cart.price | currency:'USD'}}</td>
+                  <td class="price-col">{{cart.price | currency:'EUR'}}</td>
                   <td class="quantity-col">
                                             <div class="cart-product-quantity">
                                                 <input type="number" class="form-control" value="{{cart.quantity}}" min="1" max="10" step="1" data-decimals="0" required>
                                             </div><!-- End .cart-product-quantity -->
                                         </td>
-                  <td class="total-col">{{cart.quantity*cart.price | currency:'USD'}}</td>
+                  <td class="total-col">{{cart.quantity*cart.price | currency:'EUR'}}</td>
                   <button class="btn btn-info btn-sm" (click)="delete(prod)">Delete</button>
                 </tr>
               </tbody>
@@ -83,15 +67,13 @@
                     <div class="cart-discount">
                       <form action="#">
                         <div class="input-group">
-                        <input type="text" class="form-control" required placeholder="coupon code">
+                        
                         <div class="input-group-append">
                       <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
                     </div><!-- .End .input-group-append -->
                       </div><!-- End .input-group -->
                       </form>
                     </div><!-- End .cart-discount -->
-
-                    <a href="#" class="btn btn-outline-dark-2"><span>Aggiorna il carrello</span><i class="icon-refresh"></i></a>
                   </div><!-- End .cart-bottom -->
                   </div><!-- End .col-lg-9 -->
                   <aside class="col-lg-3">

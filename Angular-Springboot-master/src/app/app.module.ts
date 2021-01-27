@@ -28,7 +28,6 @@ import { PantaloniComponent } from './Components/pantaloni/pantaloni.component';
 import { GiubottiComponent } from './Components/giubotti/giubotti.component';
 import { FiltriComponent } from './Components/filtri/filtri.component';
 import { CheckoutComponent } from './Components/home/checkout/checkout.component';
-import { SummaryComponent } from './Components/home/checkout/summary/summary.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UomoComponent } from './Components/home/uomo/uomo.component';
 import { DonnaComponent } from './Components/home/donna/donna.component';
@@ -77,11 +76,6 @@ const appRoutes:Routes=[
 {
   path: 'home/cart/checkout',
   component: CheckoutComponent,
-  canActivate:[AuthguardGuard]
-},
-{
-  path: 'home/cart/checkout/summary',
-  component: SummaryComponent,
   canActivate:[AuthguardGuard]
 },
 {
@@ -164,7 +158,6 @@ const appRoutes:Routes=[
     GiubottiComponent,
     FiltriComponent,
     CheckoutComponent,
-    SummaryComponent,
     UserDetailComponent,
     UomoComponent,
     DonnaComponent,
