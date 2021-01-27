@@ -33,6 +33,7 @@ export class ApiService {
   private CHECKO_API='http://localhost:8087/user/checkout';
   private USER_BYID = 'http://localhost:8087/user/getUserById'
   private LISTU_APi = 'http://localhost:8087/admin/getUsers';
+  private EDIT_USR = 'http://localhost:8087/user/updateUser';
 
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService, private http: HttpClient) {
 
@@ -265,6 +266,16 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
   removeToken() {
     this.storage.remove('auth_type');
     return this.storage.remove('auth_token');
+  }
+
+  updateUser(utente : User, auth: string){
+    const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    const formData: FormData = new FormData();
+    formData.append('email', utente.email);
+    formData.append('username', utente.username);
+    formData.append('password', utente.password);
+    formData.append('age', utente.age);
+    return this.http.post<any>(this.EDIT_USR, formData, { headers: myheader });
   }
 
 }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ProfiloComponent} from './Components/profilo/profilo.component';
 
 import { AppComponent } from './app.component';
 import {StorageServiceModule} from 'angular-webstorage-service';
@@ -34,6 +33,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UomoComponent } from './Components/home/uomo/uomo.component';
 import { DonnaComponent } from './Components/home/donna/donna.component';
 import { ListautentiComponent } from './Components/admin/listautenti/listautenti.component';
+import { ModificaDettagliUtenteComponent } from './Components/modifica-dettagli-utente/modifica-dettagli-utente.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -135,13 +135,13 @@ const appRoutes:Routes=[
     path:'home/donna',
     component: DonnaComponent,
     canActivate:[AuthguardGuard]
+  },
+  {
+    path:"home/user-detail/modifica",
+    component: ModificaDettagliUtenteComponent,
+    canActivate:[AuthguardGuard]
   }
- 
-  path:'home/profilo',
-  component: ProfiloComponent,
-  canActivate:[AuthguardGuard]
-}
- 
+
 
 ];
 
@@ -171,9 +171,8 @@ const appRoutes:Routes=[
     UserDetailComponent,
     UomoComponent,
     DonnaComponent,
-    ListautentiComponent
-    ProfiloComponent
-
+    ListautentiComponent,
+    ModificaDettagliUtenteComponent
   ],
   imports: [
     BrowserModule,
