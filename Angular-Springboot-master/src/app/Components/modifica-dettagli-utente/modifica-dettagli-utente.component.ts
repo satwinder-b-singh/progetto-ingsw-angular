@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../Service/api.service";
 import {FormBuilder} from '@angular/forms';
 import {User} from "../../Model/user";
@@ -27,7 +27,7 @@ export class ModificaDettagliUtenteComponent implements OnInit {
   @ViewChild('pwdType') myPassword: ElementRef;
   @ViewChild('ageType') myAge: ElementRef;
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { /*this.createForm();*/}
+	constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private formBuilder: FormBuilder) { /*this.createForm();*/}
 
   ngOnInit() {
   	 if (this.api.isAuthenticated) {
@@ -51,9 +51,14 @@ export class ModificaDettagliUtenteComponent implements OnInit {
     this.api.updateUser(utente, this.auth).subscribe(
       res => {
         this.status ='ok';
+        
+        
       }
     );
-
+    alert("Modifica dati andata a buon fine! Verrai disconneso dal sito");
+    this.api.removeToken();
+    this.router.navigate(['home']);
+    
   }
 
 

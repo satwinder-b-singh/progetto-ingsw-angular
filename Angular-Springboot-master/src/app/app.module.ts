@@ -32,6 +32,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UomoComponent } from './Components/home/uomo/uomo.component';
 import { DonnaComponent } from './Components/home/donna/donna.component';
 import { ListautentiComponent } from './Components/admin/listautenti/listautenti.component';
+import { ModificaDettagliUtenteComponent } from './Components/modifica-dettagli-utente/modifica-dettagli-utente.component';
 
 const appRoutes:Routes=[
   { path: '',
@@ -99,6 +100,11 @@ const appRoutes:Routes=[
   canActivate:[AuthguardGuard]
 },
 {
+  path:'home/user-detail/modifica',
+  component: ModificaDettagliUtenteComponent,
+  canActivate:[AuthguardGuard]
+},
+{
   path:'home/maglie',
   component: MaglieComponent,
   canActivate:[AuthguardGuard]
@@ -161,7 +167,8 @@ const appRoutes:Routes=[
     UserDetailComponent,
     UomoComponent,
     DonnaComponent,
-    ListautentiComponent
+    ListautentiComponent,
+    ModificaDettagliUtenteComponent
   ],
   imports: [
     BrowserModule,
