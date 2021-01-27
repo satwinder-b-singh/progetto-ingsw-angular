@@ -270,12 +270,16 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
 
   updateUser(utente : User, auth: string){
     const myheader = new HttpHeaders().set('AUTH_TOKEN', auth);
+    /*
     const formData: FormData = new FormData();
     formData.append('email', utente.email);
     formData.append('username', utente.username);
     formData.append('password', utente.password);
     formData.append('age', utente.age);
     return this.http.post<any>(this.EDIT_USR, formData, { headers: myheader });
+    */
+    console.log("Ciao amico, il nuovo valore e" + utente.username);
+    console.log("Ciao amico, il nuovo valore e" + utente.password);
   }
 
 }

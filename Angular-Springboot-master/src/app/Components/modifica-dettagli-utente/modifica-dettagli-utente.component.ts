@@ -21,10 +21,10 @@ export class ModificaDettagliUtenteComponent implements OnInit {
     usertype: '',
     age: ''
   };
-	//@ViewChild('userType') myUser: ElementRef;
-	//@ViewChild('mailType') myEmail: ElementRef; 
-  //@ViewChild('pwdType') myPassword: ElementRef;
-  //@ViewChild('ageType') myAge: ElementRef;
+	@ViewChild('userType') myUser: ElementRef;
+	@ViewChild('mailType') myEmail: ElementRef; 
+  @ViewChild('pwdType') myPassword: ElementRef;
+  @ViewChild('ageType') myAge: ElementRef;
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { /*this.createForm();*/}
 
@@ -64,6 +64,12 @@ export class ModificaDettagliUtenteComponent implements OnInit {
   }
 
   update(utente: User){
+    this.utente.username = this.myUser.nativeElement.value;
+    this.utente.email = this.myEmail.nativeElement.value;
+    this.utente.password = this.myPassword.nativeElement.value;
+    this.utente.age = this.myAge.nativeElement.value;
+    //console.log("Ciao amico, il nuovo valore e" + this.utente.username);
+    //console.log("Ciao amico, il nuovo valore e" + this.utente.password);
     this.api.updateUser(utente, this.auth);
   	//this.api.updateUser(utente);
   	/*
