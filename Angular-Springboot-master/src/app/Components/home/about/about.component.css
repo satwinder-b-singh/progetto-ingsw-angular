@@ -1,0 +1,18 @@
+
+
+#container img{
+  horiz-align: center;
+}
+
+.prova{
+  position: relative;
+  width: 33.333333%;
+  overflow: hidden;
+  float: left;
+}
+
+
+.provaMia{
+  height: 200px;
+  width: 200px;
+}
