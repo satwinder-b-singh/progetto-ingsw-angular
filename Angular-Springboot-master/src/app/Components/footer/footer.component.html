@@ -5,7 +5,10 @@
 </head>
 
 
-<footer class="footer">
+<div class="page-wrapper" [ngSwitch]="loggedType" >
+<!---       QUESTO VIENE VISUALIZZATO DA VISITOR     -->
+  <header class="header" *ngSwitchCase="'home'">
+<footer  class="footer"  >
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v9.0" nonce="kpNlLwis"></script>
   <div class="footer-middle">
@@ -18,16 +21,9 @@
 
               <div class="social-icons">
                 <div class="row">
-                  <!-- <a>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCarezze-Crea-390528321503740&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCarezze-Crea-390528321503740&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                  </a>    -->
                   <a href="https://www.facebook.com/Carezze-Crea-390528321503740/?ref=page_internal"> <img  src="assets/images/facebook.png"  width="105" height="25"> </a>
-                <a href="https://www.instagram.com/carezzedicreadomenica/"> <img  src="assets/images/instagram.png"  width="105" height="25"> </a>
+                  <a href="https://www.instagram.com/carezzedicreadomenica/"> <img  src="assets/images/instagram.png"  width="105" height="25"> </a>
               </div>
-                <!--    Qui è come le importavamo prima
-                <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-                <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>    -->
               </div><!-- End .soial-icons -->
 
             </div><!-- End .widget about-widget -->
@@ -55,6 +51,17 @@
               </ul><!-- End .widget-list -->
             </div><!-- End .widget -->
           </div><!-- End .col-sm-6 col-lg-3 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="social-icons">
+              <div class="row">
+                <a href="https://www.facebook.com/Carezze-Crea-390528321503740/?ref=page_internal"> <img  src="assets/images/facebook.png"  width="105" height="25"> </a>
+                <a href="https://www.instagram.com/carezzedicreadomenica/"> <img  src="assets/images/instagram.png"  width="105" height="25"> </a>
+              </div>
+            </div>
+          </div>
+
+
         </div><!-- End .row -->
       </div><!-- End .container -->
   </div><!-- End .footer-middle -->
@@ -68,3 +75,110 @@
     </div><!-- End .container -->
   </div><!-- End .footer-bottom -->
 </footer><!-- End .footer -->
+  </header>>
+
+  <header class="header" *ngSwitchCase="'admin'">
+    <footer  class="footer"  >
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v9.0" nonce="kpNlLwis"></script>
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-lg-3">
+              <div class="widget widget-about">
+                <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                <p> Carezze adesso è anche online! </p>
+
+
+                <!--    Qui è come le importavamo prima
+                <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>    -->
+
+
+              </div><!-- End .widget about-widget -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="widget">
+                <h4 class="widget-title">Link</h4><!-- End .widget-title -->
+
+                <ul class="widget-list">
+                  <li><a routerLink='home/about'>About Carezze</a></li>
+
+                </ul><!-- End .widget-list -->
+              </div><!-- End .widget -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="social-icons">
+                <div class="row">
+                  <a href="https://www.facebook.com/Carezze-Crea-390528321503740/?ref=page_internal"> <img  src="assets/images/facebook.png"  width="105" height="25"> </a>
+                  <a href="https://www.instagram.com/carezzedicreadomenica/"> <img  src="assets/images/instagram.png"  width="105" height="25"> </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End .row -->
+        </div><!-- End .container -->
+      </div><!-- End .footer-middle -->
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="footer-copyright">Copyright © 2019 Carezze Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+          <figure class="footer-payments">
+            <img src="assets/images/payments.png" alt="Payment methods" width="272" height="20">
+          </figure><!-- End .footer-payments -->
+        </div><!-- End .container -->
+      </div><!-- End .footer-bottom -->
+    </footer><!-- End .footer -->
+  </header>
+
+<!--      QUESTO VERRA' UTILIZZATO DAL CUSTOMER      -->
+  <header class="header" *ngSwitchCase="'customer'">
+<footer  class="footer"  >
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v9.0" nonce="kpNlLwis"></script>
+  <div class="footer-middle">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-lg-3">
+          <div class="widget widget-about">
+            <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+            <p> Carezze adesso è anche online! </p>
+          </div><!-- End .widget about-widget -->
+        </div><!-- End .col-sm-6 col-lg-3 -->
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title">Link</h4><!-- End .widget-title -->
+
+            <ul class="widget-list">
+              <li><a routerLink='home/about'>About Carezze</a></li>
+
+            </ul><!-- End .widget-list -->
+          </div><!-- End .widget -->
+        </div><!-- End .col-sm-6 col-lg-3 -->
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="social-icons">
+            <div class="row">
+              <a href="https://www.facebook.com/Carezze-Crea-390528321503740/?ref=page_internal"> <img  src="assets/images/facebook.png"  width="105" height="25"> </a>
+              <a href="https://www.instagram.com/carezzedicreadomenica/"> <img  src="assets/images/instagram.png"  width="105" height="25"> </a>
+            </div>
+            </div>
+        </div>
+      </div><!-- End .row -->
+    </div><!-- End .container -->
+  </div><!-- End .footer-middle -->
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-copyright">Copyright © 2019 Carezze Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+      <figure class="footer-payments">
+        <img src="assets/images/payments.png" alt="Payment methods" width="272" height="20">
+      </figure><!-- End .footer-payments -->
+    </div><!-- End .container -->
+  </div><!-- End .footer-bottom -->
+</footer><!-- End .footer -->
+  </header>
+
+</div>

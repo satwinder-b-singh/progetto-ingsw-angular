@@ -41,15 +41,18 @@ const appRoutes:Routes=[
   },
 {
   path:'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'register',
-  component: RegisterComponent
+  component: RegisterComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin',
-  component: AdminComponent
+  component: AdminComponent,
+  canActivate:[AuthguardGuard]
 }
 ,
 {
@@ -75,10 +78,12 @@ const appRoutes:Routes=[
 {
   path: 'home/cart/checkout',
   component: CheckoutComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path: 'home/cart/checkout/summary',
   component: SummaryComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin/edit',
@@ -87,7 +92,8 @@ const appRoutes:Routes=[
 },
 {
   path:'admin/listaU',
-  component: ListautentiComponent
+  component: ListautentiComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin/order',
