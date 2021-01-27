@@ -64,7 +64,10 @@ export class CheckoutComponent implements OnInit {
   place() {
     this.api.place(this.auth).subscribe(res => {
        if(res.status == '200')
-         this.route.navigate(['home/cart/checkout/summary']);
+       {
+        alert("L'ordine è andato a buon fine. Grazie per averci scelto")
+         this.route.navigate(['home']);
+       }
         else
           alert('Non siamo riusciti ad effettuare il pagamento')
 
