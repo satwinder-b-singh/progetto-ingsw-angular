@@ -13,6 +13,7 @@ export class ModificaDettagliUtenteComponent implements OnInit {
 
 	dataEditForm: any;
 	auth: string;
+  status: string;
 	utente: User = {
     id: 0,
     email: '',
@@ -22,23 +23,14 @@ export class ModificaDettagliUtenteComponent implements OnInit {
     age: ''
   };
 	@ViewChild('userType') myUser: ElementRef;
-	@ViewChild('mailType') myEmail: ElementRef; 
+	@ViewChild('mailType') myEmail: ElementRef;
   @ViewChild('pwdType') myPassword: ElementRef;
   @ViewChild('ageType') myAge: ElementRef;
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { /*this.createForm();*/}
 
   ngOnInit() {
-  	this.auth = this.api.getToken();
-  	this.api.getUserbyId(this.auth).subscribe(
-  			res => {
-  				this.utente = res.object;
-  			}
-  		);
-
-
-
-    if (this.api.isAuthenticated) {
+  	 if (this.api.isAuthenticated) {
       this.auth = this.api.getToken();
       this.api.getUserbyId(this.auth).subscribe(
         res => {
@@ -47,20 +39,7 @@ export class ModificaDettagliUtenteComponent implements OnInit {
       );
     }
 
-/*
-  	this.myAge.nativeElement.value = 18;
-  	//this.myEmail.nativeElement.value = "ako@sono.it";
-  	this.myUser.nativeElement.value = "Rondo";
-  	this.myPassword.nativeElement.value = "si";
-  	*/
-  	/*
-  	var username = document.getElementById("username");
-  	username.value = this.utente.username;
-  	var username = document.getElementById("email");
-  	username.value = "si@si.it";
-  	var username = document.getElementById("eta");
-  	username.value = "18";
-  	*/
+
   }
 
   update(utente: User){
@@ -68,24 +47,14 @@ export class ModificaDettagliUtenteComponent implements OnInit {
     this.utente.email = this.myEmail.nativeElement.value;
     this.utente.password = this.myPassword.nativeElement.value;
     this.utente.age = this.myAge.nativeElement.value;
-    //console.log("Ciao amico, il nuovo valore e" + this.utente.username);
-    //console.log("Ciao amico, il nuovo valore e" + this.utente.password);
-    this.api.updateUser(utente, this.auth);
-  	//this.api.updateUser(utente);
-  	/*
-  	var username = document.getElementById("username");
-  	username.value = "nome";
-  	*/
+
+    this.api.updateUser(utente, this.auth).subscribe(
+      res => {
+        this.status ='ok';
+      }
+    );
+
   }
 
-/*
-  createForm() {
-    this.dataEditForm = this.formBuilder.group({
-			  email: "",
-			  username: "",
-			  password: "",
-			  age: ""
-    });
-  }
-*/
+
 }

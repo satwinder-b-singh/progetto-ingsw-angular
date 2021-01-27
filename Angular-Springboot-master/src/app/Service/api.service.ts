@@ -280,6 +280,7 @@ console.log("Prima della chiamata htt gli sto passando il prodotto : "+product.p
     */
     console.log("Ciao amico, il nuovo valore e" + utente.username);
     console.log("Ciao amico, il nuovo valore e" + utente.password);
+    return this.http.post<any>(this.EDIT_USR,  utente, { headers: myheader });
   }
 
 }
