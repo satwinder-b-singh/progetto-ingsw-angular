@@ -41,15 +41,18 @@ const appRoutes:Routes=[
   },
 {
   path:'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'register',
-  component: RegisterComponent
+  component: RegisterComponent,
+  canActivate:[AuthguardGuard]
 },
 {
   path:'admin',
-  component: AdminComponent
+  component: AdminComponent,
+  canActivate:[AuthguardGuard]
 }
 ,
 {
