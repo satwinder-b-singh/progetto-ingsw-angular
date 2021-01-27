@@ -1,0 +1,70 @@
+<!-->
+<div class="offset-2 col-6 ">
+
+<form class="form-horizontal shadow p-3 mb-5 bg-white rounded" [formGroup]="addressForm"  (ngSubmit)="update()" novalidate>
+
+
+
+	<div class="form-group">
+		<label class="control-label col-m-10" >Username: </label>
+			<div class="col-m-10">
+	  		<input type="text" formControlName="username" name="username"  [(ngModel)]="utente.username" placeholder="Username"/>
+			</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-m-10" >Indirizzo e-mail: </label>
+			<div class="col-m-10">
+	  		<input type="text" formControlName="email" name="email"  [(ngModel)]="utente.email" placeholder="e-mail"/>
+			</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-m-10" >Password: </label>
+			<div class="col-m-10">
+	  		<input type="password" formControlName="password" name="password"  [(ngModel)]="utente.password" placeholder="type password"/>
+			</div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="control-label col-m-10" >Età: </label>
+			<div class="col-m-10">
+	  		<input type="text" formControlName="age" name="age"  [(ngModel)]="utente.age" placeholder="eta'"/>
+			</div>
+	</div>
+
+
+	<div class="form-group">
+	    <div class="col-m-offset-2 col-m-4">
+	        <button type='submit' class="btn  btn-primary" >
+	            OK
+	        </button>
+	    </div>
+	</div>
+
+</form>
+</div>
+<-->
+
+<form (ngSubmit)="update(utente)">
+  <label for="fname">Username:</label><br>
+  <input #userType type="text" id="username" name="username" placeholder="type username" value={{utente.username}}><br>
+
+  <label for="lname">Indirizzo email:</label><br>
+  <input #mailType type="text" id="email" name="email" placeholder="type email address" value={{utente.email}}><br>
+
+  <label for="lname">Password:</label><br>
+  <input #pwdType type="password" id="password" name="password" placeholder="type new password" value={{utente.password}}><br>
+
+
+  <label for="lname">Età:</label><br>
+  <input #ageType type="text" id="eta" name="age" placeholder="type age" value={{utente.age}}><br>
+
+
+
+  <button type='submit' class="btn  btn-primary" >
+      OK
+  </button>
+
+</form>
